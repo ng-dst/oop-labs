@@ -89,7 +89,7 @@ namespace AlgebraicCurves {
     char* LemniscateBooth::repr() const {
         static const char* fmt = "Lemniscate of Booth\n"
                                  "Type:                    %s\n"
-                                 "Equation (cartesian):    (x^2 + y^2)^2 - (%.3lf) x^2 + (%.3lf) y^2 = 0\n"
+                                 "Equation (cartesian):    (x^2 + y^2)^2 - (%.3lf) x^2 - (%.3lf) y^2 = 0\n"
                                  "Parameters (cartesian):  m = %.3lf, c = %.3lf\n"
                                  "Equation (polar):        r^2 = %.3lf cos^2(w) %c %.3lf sin^2(w)\n"
                                  "Parameters (polar):      a = %.3lf, b = %.3lf\n"

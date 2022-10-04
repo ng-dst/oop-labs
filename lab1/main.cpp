@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cstring>
 
-#include "../utils/input.h"
+#include "input.h"
 #include "spmatrix.h"
 
 void task(int* b, SpMatrix::SparseMatrix& sp) {
