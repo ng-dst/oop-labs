@@ -7,6 +7,6 @@ include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
 
 # 'Google_Tests_run' is the target name
 
-include_directories(../lab2/src)
+include_directories(../lab2/lib)
 add_executable(Google_Tests_run_lab2 ../lab2/test/test.cpp)
 target_link_libraries(Google_Tests_run_lab2 gtest gtest_main booth)

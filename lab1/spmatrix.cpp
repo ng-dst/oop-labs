@@ -82,8 +82,8 @@ namespace SpMatrix {
 
     std::ostream& print(std::ostream& stream, SparseMatrix& sp) {
         stream << "Matrix (" << sp.height << " rows, " << sp.width << " columns):" << std::endl;
-        for (int i = 0; i < sp.height; i++) {
-            for (int j = 0; j < sp.width; j++)
+        for (size_t i = 0; i < sp.height; i++) {
+            for (size_t j = 0; j < sp.width; j++)
                 stream << get(sp, i, j) << " ";
             stream << std::endl;
         }

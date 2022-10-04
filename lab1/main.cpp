@@ -47,7 +47,7 @@ void interactive() {
 
     char command[32];
 
-    size_t h=-1, w=-1, r=-1, c=-1;
+    size_t h, w, r, c;
     int x;
     std::cout << "Enter matrix size" << std::endl;
     std::cout << "Height  " << std::ends;

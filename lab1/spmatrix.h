@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <cstddef>
-#include "lib/list.h"
+#include "list.h"
 
 namespace SpMatrix {
 

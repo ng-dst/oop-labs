@@ -1,8 +1,8 @@
 #include <iostream>
 #include <cstring>
 
-#include "../utils/input.h"
-#include "src/LemniscateBooth.h"
+#include "input.h"
+#include "LemniscateBooth.h"
 
 void print_commands() {
     std::cout << "set    -  set m, c parameters of curve" << std::endl;
