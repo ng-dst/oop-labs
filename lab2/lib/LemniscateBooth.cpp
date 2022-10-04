@@ -45,7 +45,7 @@ namespace AlgebraicCurves {
     }
 
     CurveType LemniscateBooth::curveType() const {
-        if (_c == 0.0) return BERNULLI;
+        if (_c == 0.0) return CIRCLE;
         if (_c == -_2m2 || _c == _2m2) return TWO_CIRCLES;
         if (-_2m2 < _c && _c < _2m2) return ELLIPTIC;
         return HYPERBOLIC;
@@ -59,8 +59,8 @@ namespace AlgebraicCurves {
             double a = sqrt(_a2), b = sqrt(_b2);
             return (_a2 - _b2) / 2 * atan2(a, b) + a*b/2;
         }
-        if (t == BERNULLI) {
-            return _a2;
+        if (t == CIRCLE) {
+            return pi * _a2;
         }
         // two circles
         return pi * _2m2;
@@ -72,12 +72,11 @@ namespace AlgebraicCurves {
             return sqrt(_a2 * cos(w)*cos(w) + _b2 * sin(w)*sin(w));
         if (t == HYPERBOLIC)
             return sqrt(_a2 * cos(w)*cos(w) - _b2 * sin(w)*sin(w));
-        if (t == BERNULLI) {
-            double s =_2m2 * cos(2*w);
-            return s >= 0.0 ? s : INFINITY;
+        if (t == CIRCLE) {
+            return sqrt(_a2);
         }
-        double s = sqrt(_a2) * cos(w);
-        return s >= 0.0 ? s : INFINITY;
+        double s = sqrt(_a2) * fabs(cos(w));
+        return s;
     }
 
     double* LemniscateBooth::polarCoords() const {
@@ -100,7 +99,7 @@ namespace AlgebraicCurves {
         const char *t = (const char*[]) {
                 "Elliptic",
                 "Hyperbolic",
-                "Bernulli",
+                "Circle",
                 "Two circles"
         }[type];
         snprintf(s, 511, fmt,

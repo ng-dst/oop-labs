@@ -40,7 +40,7 @@ TEST (LemniscateBoothProps, Type) {
     AlgebraicCurves::LemniscateBooth b5(1.0, -10.0);
     ASSERT_EQ(AlgebraicCurves::HYPERBOLIC, b5.curveType());
     AlgebraicCurves::LemniscateBooth b6(3.0, 0.0);
-    ASSERT_EQ(AlgebraicCurves::BERNULLI, b6.curveType());
+    ASSERT_EQ(AlgebraicCurves::CIRCLE, b6.curveType());
     AlgebraicCurves::LemniscateBooth b7(1.0, -2.0);
     ASSERT_EQ(AlgebraicCurves::TWO_CIRCLES, b7.curveType());
 }
@@ -53,5 +53,5 @@ TEST (LemniscateBoothProps, Area) {
     AlgebraicCurves::LemniscateBooth ba(1.0, -2.0);
     ASSERT_NEAR(6.283185, ba.area(), 1e-4);
     AlgebraicCurves::LemniscateBooth bb(1.0, 0.0);
-    ASSERT_NEAR(2.000000, bb.area(), 1e-4);
+    ASSERT_NEAR(6.283185, bb.area(), 1e-4);
 }

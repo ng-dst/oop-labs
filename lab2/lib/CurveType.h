@@ -6,7 +6,7 @@ namespace AlgebraicCurves {
     enum CurveType {
         ELLIPTIC,
         HYPERBOLIC,
-        BERNULLI,
+        CIRCLE,
         TWO_CIRCLES
     };
 
