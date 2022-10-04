@@ -9,4 +9,4 @@ include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
 
 include_directories(../lab2/lib)
 add_executable(Google_Tests_run_lab2 ../lab2/test/test.cpp)
-target_link_libraries(Google_Tests_run_lab2 gtest gtest_main booth)
+target_link_libraries(Google_Tests_run_lab2 gtest gtest_main libbooth)
