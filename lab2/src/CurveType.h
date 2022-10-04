@@ -1,7 +1,3 @@
-//
-// Created by pacan on 9/27/22.
-//
-
 #ifndef LAB2_CURVETYPE_H
 #define LAB2_CURVETYPE_H
 

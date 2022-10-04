@@ -6,7 +6,7 @@
 namespace AlgebraicCurves {
     static const double pi = 3.1415926;
 
-class LemniscateBooth {
+    class LemniscateBooth {
     /*     1. class state
      *     2. constructors
      *     3. type of curve
@@ -26,7 +26,7 @@ class LemniscateBooth {
         double _a2=0.0, _b2=0.0;
         //  a2 = |2m2 + c|    b2 = |2m2 - c|
         void calculatePolar();
-public:
+    public:
         LemniscateBooth();
         LemniscateBooth(double m, double c);
         LemniscateBooth(LemniscateBooth& lem);

@@ -1,7 +1,3 @@
-//
-// Created by pacan on 9/27/22.
-//
-
 #include "LemniscateBooth.h"
 #include <cmath>
 #include <cstdio>

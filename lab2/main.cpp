@@ -68,6 +68,11 @@ void interactive() {
             std::cout << "b = " << polar[1] << std::endl;
             delete[] polar;
         }
+        else if (!strcmp("radius", command)) {
+            std::cout << "w: " << std::ends;
+            if (Input::input(m) == -1) break;
+            std::cout << "r(" << m << ") = " << booth->radius(m) << std::endl;
+        }
         else if (!strcmp("print", command)) {
             char* s = booth->repr();
             std::cout << s << std::endl;
