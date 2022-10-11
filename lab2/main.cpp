@@ -82,7 +82,6 @@ void interactive() {
         else if (!strcmp("exit", command)) break;
         else std::cout << "Unknown command. Try again" << std::endl;
     }
-    delete booth;
 }
 
 
