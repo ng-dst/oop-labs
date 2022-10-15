@@ -1,6 +1,10 @@
 #include "../../Google_tests/lib/googletest/include/gtest/gtest.h"
 
-#include "overloaded/OrderedTable.h"
+#ifdef DYNAMIC
+ #include "dynamic/OrderedTable.h"
+#else
+ #include "overloaded/OrderedTable.h"
+#endif
 
 TEST (OrderedTableConstructor, CopyConstructor) {
     Lab3::OrderedTable t1;

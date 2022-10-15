@@ -7,12 +7,12 @@ include_directories(lib)
 # -------------------------------- Uncomment desired version here -------------------------------- #
 
 # include_directories(lib/static)
-include_directories(lib/overloaded)
-# include_directories(lib/dynamic)
+# include_directories(lib/overloaded)
+include_directories(lib/dynamic)
 
-#add_library(libtable STATIC lib/static/OrderedTable.cpp)
-add_library(libtable STATIC lib/overloaded/OrderedTable.cpp)
-# add_library(libtable STATIC lib/dynamic/OrderedTable.cpp)
+# add_library(libtable STATIC lib/static/OrderedTable.cpp)
+# add_library(libtable STATIC lib/overloaded/OrderedTable.cpp)
+add_library(libtable STATIC lib/dynamic/OrderedTable.cpp)
 
 # ------------------------------------------------------------------------------------------------ #
 

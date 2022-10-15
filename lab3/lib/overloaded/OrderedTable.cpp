@@ -161,10 +161,10 @@ namespace Lab3 {
         return *this;
     }
 
-    OrderedTable &operator+(const OrderedTable &t1, const OrderedTable &t2) {
-        auto t = new OrderedTable(t1);
-        *t += t2;
-        return *t;
+    OrderedTable OrderedTable::operator+(const OrderedTable &t) {
+        OrderedTable tmp(*this);
+        tmp += t;
+        return tmp;
     }
 
     std::ostream &operator<<(std::ostream &stream, const OrderedTable &t) {

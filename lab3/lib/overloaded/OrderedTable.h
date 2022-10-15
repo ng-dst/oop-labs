@@ -26,7 +26,7 @@ namespace Lab3 {
         void rm(int key);
         void update(int key, const char* info);
 
-        friend OrderedTable& operator + (const OrderedTable& t1, const OrderedTable& t2);
+        OrderedTable operator + (const OrderedTable& t);
         OrderedTable& operator += (const OrderedTable& t);
 
         friend std::ostream& operator << (std::ostream& stream, const OrderedTable& t);

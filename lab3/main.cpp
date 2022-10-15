@@ -16,13 +16,12 @@ void print_commands() {
 
 void interactive() {
     std::cout << "Lab 3:  Container classes" << std::endl;
-    std::cout << " --- Ordered vector-table setup ---" << std::endl;
+    std::cout << " --- Ordered vector-table --- " << std::endl;
 
     char command[32];
     char info[Lab3::info_length];
     const char* s;
     int k;
-    std::cout << "configuration: size=" << Lab3::max_size << ", actual length=0, allocation=static" << std::endl;
 
     Lab3::OrderedTable t;
     std::cout << "For command list, enter '?'" << std::endl;
