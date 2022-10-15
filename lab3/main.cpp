@@ -19,10 +19,10 @@ void interactive() {
     std::cout << " --- Ordered vector-table setup ---" << std::endl;
 
     char command[32];
-    char info[INFO_LENGTH];
+    char info[Lab3::info_length];
     const char* s;
     int k;
-    std::cout << "configuration: size=" << SIZE << ", actual length=0, allocation=static" << std::endl;
+    std::cout << "configuration: size=" << Lab3::max_size << ", actual length=0, allocation=static" << std::endl;
 
     Lab3::OrderedTable t;
     std::cout << "For command list, enter '?'" << std::endl;
@@ -57,6 +57,7 @@ void interactive() {
             if (Input::input(k) == -1) break;
             std::cout << "Info:  " << std::ends;
             try {
+                std::cin.ignore();
                 t.inputElem(std::cin, k);
                 std::cout << "Element added." << std::endl;
             }

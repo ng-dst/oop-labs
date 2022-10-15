@@ -1,7 +1,8 @@
 #include "../../Google_tests/lib/googletest/include/gtest/gtest.h"
-#include "OrderedTable.h"
 
-#include <cstring>
+#include <TableElemStatic.h>
+#include "static/OrderedTable.h"
+
 
 TEST (OrderedTableConstructor, DefaultConstructor) {
     Lab3::OrderedTable t1;
@@ -23,8 +24,8 @@ TEST (OrderedTableConstructor, InitConstructor) {
     ASSERT_EQ(nullptr, t2.find(999));
     ASSERT_EQ(nullptr, t2.find(1300));
     ASSERT_EQ(nullptr, t2.find(2900));
-    ASSERT_EQ(0, strncmp("Sample text 1", f, INFO_LENGTH));
-    ASSERT_EQ(0, strncmp("Sample text 2", g, INFO_LENGTH));
+    ASSERT_STREQ("Sample text 1", f);
+    ASSERT_STREQ("Sample text 2", g);
 }
 
 TEST (OrderedTableAdd, Add) {
@@ -47,7 +48,7 @@ TEST (OrderedTableAdd, Add) {
     ASSERT_NE(nullptr, f3);
     ASSERT_NE(nullptr, f5);
     Lab3::OrderedTable t6;
-    for (int i = 0; i < SIZE; i++)
+    for (int i = 0; i < Lab3::max_size; i++)
         t6.add(i, "aaa");
     ASSERT_THROW(t6.add(-2, "aaa"), std::overflow_error);
 }

@@ -1,14 +1,11 @@
 #ifndef OOP_TABLEVECTOR_H
 #define OOP_TABLEVECTOR_H
 
-#ifndef INFO_LENGTH
-#define INFO_LENGTH 32
-#endif
-
 namespace Lab3 {
+    static const size_t info_length = 32;
     struct TableElem {
         int key;
-        char info[INFO_LENGTH]{};
+        char info[info_length]{};
         TableElem(): key(0) { info[0] = '\0'; }
     };
 }

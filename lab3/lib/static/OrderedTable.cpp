@@ -41,7 +41,7 @@ namespace Lab3 {
     }
 
     void OrderedTable::add(const TableElem &elem) {
-        if (length >= SIZE)
+        if (length >= max_size)
             throw std::overflow_error("Could not add new element: table is full");
         size_t i = _findIndex(elem.key);
         memmove(&_vector[i+1], &_vector[i], (length - i)*sizeof(TableElem));
@@ -54,7 +54,7 @@ namespace Lab3 {
             throw std::invalid_argument("Cannot add: info is nullptr");
         TableElem elem;
         elem.key = key;
-        strncpy(elem.info, info, INFO_LENGTH);
+        strncpy(elem.info, info, info_length);
         add(elem);
     }
 
@@ -64,7 +64,7 @@ namespace Lab3 {
         size_t i = _findIndex(key);
         if (_vector[i].key != key)
             throw std::invalid_argument("Could not update element: key not found");
-        strncpy(_vector[i].info, info, INFO_LENGTH);
+        strncpy(_vector[i].info, info, info_length);
     }
 
     const char* OrderedTable::find(const int key) const {
@@ -94,7 +94,8 @@ namespace Lab3 {
             add(key, "");
         }
         else throw std::invalid_argument("Element already present");
-        stream >> _vector[i].info;
+        stream.get(_vector[i].info, info_length);
+        // stream >> _vector[i].info;
         return stream;
     }
 

@@ -12,7 +12,9 @@ add_executable(Google_Tests_run_lab2 ../lab2/test/test.cpp)
 target_link_libraries(Google_Tests_run_lab2 gtest gtest_main libbooth)
 
 include_directories(../lab3/lib)
-add_executable(Google_Tests_run_lab3 ../lab3/test/test.cpp)
-target_link_libraries(Google_Tests_run_lab3 gtest gtest_main libtable)
+add_executable(Google_Tests_run_lab3_static ../lab3/test/test_static.cpp ../lab3/lib/static/OrderedTable.h)
+target_link_libraries(Google_Tests_run_lab3_static gtest gtest_main libtable)
+add_executable(Google_Tests_run_lab3_overloaded ../lab3/test/test_overloaded.cpp ../lab3/lib/overloaded/OrderedTable.h)
+target_link_libraries(Google_Tests_run_lab3_overloaded gtest gtest_main libtable)
 
-
+#  3.c coming soon...
