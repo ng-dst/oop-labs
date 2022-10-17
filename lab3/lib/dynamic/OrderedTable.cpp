@@ -92,7 +92,7 @@ namespace Lab3 {
         if (!info)
             throw std::invalid_argument("Cannot update: info is nullptr");
         size_t i = _findIndex(key);
-        if (_vector[i]->key != key)
+        if (length == 0 || _vector[i]->key != key)
             throw std::invalid_argument("Could not update element: key not found");
         free(_vector[i]->info);
         _vector[i]->info = strdup(info);
@@ -123,13 +123,13 @@ namespace Lab3 {
 
     std::istream& OrderedTable::inputElem(std::istream &stream, const int key) {
         size_t i = _findIndex(key);
-        if (_vector[i]->key == key)
+        if (length != 0 && _vector[i]->key == key)
             throw std::invalid_argument("Element already present");
         char buf[info_length];
         stream.get(buf, info_length);
         if (!stream.good())
             throw std::runtime_error("Could not input element info from istream");
-        _vector[i]->info = strdup(buf);
+        add(key, buf);
         return stream;
     }
 

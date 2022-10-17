@@ -1,20 +1,17 @@
 cmake_minimum_required(VERSION 3.17)
 set(CMAKE_CXX_STANDARD 17)
 
+# -------------------------------- Uncomment desired version here -------------------------------- #
+# set(LAB_VARIANT "static")
+# set(LAB_VARIANT "overloaded")
+set(LAB_VARIANT "dynamic")
+# ------------------------------------------------------------------------------------------------ #
+
 project(lab3)
 include_directories(lib)
 
-# -------------------------------- Uncomment desired version here -------------------------------- #
-
-# include_directories(lib/static)
-# include_directories(lib/overloaded)
-include_directories(lib/dynamic)
-
-# add_library(libtable STATIC lib/static/OrderedTable.cpp)
-# add_library(libtable STATIC lib/overloaded/OrderedTable.cpp)
-add_library(libtable STATIC lib/dynamic/OrderedTable.cpp)
-
-# ------------------------------------------------------------------------------------------------ #
+include_directories(lib/${LAB_VARIANT})
+add_library(libtable STATIC lib/${LAB_VARIANT}/OrderedTable.cpp)
 
 include_directories(test)
 

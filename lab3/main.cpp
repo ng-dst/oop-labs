@@ -60,7 +60,7 @@ void interactive() {
                 t.inputElem(std::cin, k);
                 std::cout << "Element added." << std::endl;
             }
-            catch (std::invalid_argument& e) {
+            catch (std::exception& e) {
                 std::cout << "Error: " << e.what() << std::endl;
             }
         }
