@@ -35,11 +35,11 @@ namespace Lab3 {
         OrderedTable& operator -- ();
         const OrderedTable operator -- (int);
 
+        char*& operator [] (int key);
         const char* operator [] (int key) const;
         int operator [] (const char* info) const;
 
         operator bool() const;
-        friend bool operator ! (const OrderedTable& t);
     };
 
 }

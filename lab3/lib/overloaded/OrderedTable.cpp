@@ -55,6 +55,8 @@ namespace Lab3 {
         if (length >= max_size)
             throw std::overflow_error("Could not add new element: table is full");
         size_t i = _findIndex(elem.key);
+        if (_vector[i].key == elem.key)
+            throw std::invalid_argument("Key already exists");
         memmove(&_vector[i+1], &_vector[i], (length - i)*sizeof(TableElem));
         _vector[i] = elem;
         length++;
@@ -122,12 +124,22 @@ namespace Lab3 {
         return length != 0;
     }
 
-    bool operator!(const OrderedTable &t) {
-        return t.length == 0;
+    const char* OrderedTable::operator[](int key) const {
+        if (!length)
+            throw std::invalid_argument("Trying to access elements from empty table");
+        size_t i = _findIndex(key);
+        if (_vector[i].key == key)
+            return _vector[i].info;
+        throw std::invalid_argument("Trying to access non-existent element");
     }
 
-    const char *OrderedTable::operator[](int key) const {
-        return find(key);
+    char*& OrderedTable::operator[](int key) {
+        if (!length)
+            throw std::invalid_argument("Trying to assign element from empty table");
+        size_t i = _findIndex(key);
+        if (_vector[i].key == key)
+            return (char*&) _vector[i].info;
+        throw std::invalid_argument("Trying to access non-existent element");
     }
 
     int OrderedTable::operator[](const char *info) const {
@@ -173,14 +185,11 @@ namespace Lab3 {
 
     std::istream &operator>>(std::istream &stream, OrderedTable &t) {
         int k;
-        char info[info_length];
+        char buf[info_length];
         stream >> k;
-        if (!stream.good())
-            throw std::runtime_error("Invalid key was recieved from istream");
-        stream >> info;
-        if (!stream.good())
-            throw std::runtime_error("Could not read info from istream");
-        t.add(k, info);
+        if (!stream.good()) return stream;
+        stream >> buf;
+        if (stream.good()) t.add(k, buf);
         return stream;
     }
 

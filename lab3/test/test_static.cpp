@@ -35,6 +35,7 @@ TEST (OrderedTableAdd, Add) {
     t3.add(42, "Info string 4");
     t3.add(40, "Info string 3");
     t3.add(21, "Info string 0");
+    ASSERT_THROW(t3.add(36, "aaa"), std::invalid_argument);
     const char* f1 = t3.find(19);
     const char* f2 = t3.find(21); // +
     const char* f3 = t3.find(27); // +

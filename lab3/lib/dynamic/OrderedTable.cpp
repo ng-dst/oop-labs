@@ -24,12 +24,22 @@ namespace Lab3 {
         }
     }
 
+    OrderedTable::OrderedTable(OrderedTable&& t) noexcept {
+        length = t.length;
+        max_size = t.max_size;
+        _vector = t._vector;
+        t.length = 0;
+        t._vector = nullptr;
+    }
+
     OrderedTable::~OrderedTable() {
-        for (int i = 0; i < length; i++) {
-            free(_vector[i]->info);
-            free(_vector[i]);
+        if (_vector) {
+            for (int i = 0; i < length; i++) {
+                free(_vector[i]->info);
+                free(_vector[i]);
+            }
+            free(_vector);
         }
-        free(_vector);
     }
 
     // -------------------------------- Internal utilities -------------------------------- //
@@ -141,16 +151,47 @@ namespace Lab3 {
 
     // -------------------------------- Overloaded operators -------------------------------- //
 
+    OrderedTable& OrderedTable::operator=(const OrderedTable &t) {
+        if (this != &t) {
+            for (int i = 0; i < length; i++) {
+                free(_vector[i]->info);
+                free(_vector[i]);
+            }
+            free(_vector);
+            length = t.length;
+            max_size = length + quota;
+            _vector = (TableElem**) calloc(max_size, sizeof(void*));
+            for (size_t i = 0; i < length; i++) {
+                auto te = (TableElem*) malloc(sizeof(TableElem));
+                te->key = t._vector[i]->key;
+                te->info = strdup(t._vector[i]->info);
+                _vector[i] = te;
+            }
+        }
+        return *this;
+    }
+
     OrderedTable::operator bool() const {
         return length != 0;
     }
 
-    bool operator!(const OrderedTable &t) {
-        return t.length == 0;
+    char* const& OrderedTable::operator[](int key) const {
+        if (!length)
+            throw std::invalid_argument("Trying to access elements from empty table");
+        size_t i = _findIndex(key);
+        if (i < length && _vector[i]->key == key) {
+            return _vector[i]->info;
+        }
+        throw std::invalid_argument("Trying to access non-existent element");
     }
 
-    const char *OrderedTable::operator[](int key) const {
-        return find(key);
+    char*& OrderedTable::operator[](int key) {
+        if (!length)
+            throw std::invalid_argument("Trying to assign an element in empty table");
+        size_t i = _findIndex(key);
+        if (i < length && _vector[i]->key == key)
+            return _vector[i]->info;
+        throw std::invalid_argument("Trying to access non-existent element");
     }
 
     int OrderedTable::operator[](const char *info) const {
@@ -177,8 +218,6 @@ namespace Lab3 {
     }
 
     OrderedTable &OrderedTable::operator+=(const OrderedTable &t) {
-        if (this->length + t.length > max_size)
-            throw std::overflow_error("Net size of tables does not fit in the static vector");
         for (size_t i = 0; i < t.length; i++) {
             auto elem = (TableElem*) malloc(sizeof(TableElem));
             elem->key = t._vector[i]->key;
@@ -202,12 +241,9 @@ namespace Lab3 {
         int k;
         char buf[info_length];
         stream >> k;
-        if (!stream.good())
-            throw std::runtime_error("Invalid key was recieved from istream");
+        if (!stream.good()) return stream;
         stream >> buf;
-        if (!stream.good())
-            throw std::runtime_error("Could not read info from istream");
-        t.add(k, buf);
+        if (stream.good()) t.add(k, buf);
         return stream;
     }
 

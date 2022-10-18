@@ -20,6 +20,7 @@ namespace Lab3 {
         size_t length;
         OrderedTable();
         OrderedTable(const OrderedTable& t);
+        OrderedTable(OrderedTable&& t) noexcept;
         ~OrderedTable();
 
         std::istream& inputElem(std::istream& stream, int key);
@@ -30,6 +31,7 @@ namespace Lab3 {
         void rm(int key);
         void update(int key, const char* info);
 
+        OrderedTable& operator = (const OrderedTable& t);
         OrderedTable operator + (const OrderedTable& t);
         OrderedTable& operator += (const OrderedTable& t);
 
@@ -39,11 +41,12 @@ namespace Lab3 {
         OrderedTable& operator -- ();
         const OrderedTable operator -- (int);
 
-        const char* operator [] (int key) const;
+        char*& operator [] (int key);
+        char* const& operator [] (int key) const;
         int operator [] (const char* info) const;
 
-        operator bool() const;
-        friend bool operator ! (const OrderedTable& t);
+        operator bool() const; // здесь без explicit для удобства записи выражений типа  if(table) { ... }
+                               // (подразумевается проверка на непустоту таблицы)
     };
 
 }
