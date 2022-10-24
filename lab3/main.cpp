@@ -27,22 +27,22 @@ void interactive() {
     std::cout << "For command list, enter '?'" << std::endl;
 
     while (true) {
-        if (Input::input(command) == -1) break;
+        if (Input::input(command) == EOF) break;
         if (command[0] == '?') print_commands();
 
         else if (!strcmp("add", command)) {
             std::cout << "Key:  " << std::ends;
-            if (Input::input(k) == -1) break;
+            if (Input::input(k) == EOF) break;
             std::cout << "Info:  " << std::ends;
-            if (Input::input(info) == -1) break;
+            if (Input::input(info) == EOF) break;
             t.add(k, info);
             std::cout << "Element added." << std::endl;
         }
         else if (!strcmp("update", command)) {
             std::cout << "Key:  " << std::ends;
-            if (Input::input(k) == -1) break;
+            if (Input::input(k) == EOF) break;
             std::cout << "Info:  " << std::ends;
-            if (Input::input(info) == -1) break;
+            if (Input::input(info) == EOF) break;
             try {
                 t.update(k, info);
                 std::cout << "Info updated." << std::endl;
@@ -53,7 +53,7 @@ void interactive() {
         }
         else if (!strcmp("input", command)) {
             std::cout << "Key:  " << std::ends;
-            if (Input::input(k) == -1) break;
+            if (Input::input(k) == EOF) break;
             std::cout << "Info:  " << std::ends;
             try {
                 std::cin.ignore();
@@ -66,14 +66,14 @@ void interactive() {
         }
         else if (!strcmp("find", command)) {
             std::cout << "Key:  " << std::ends;
-            if (Input::input(k) == -1) break;
+            if (Input::input(k) == EOF) break;
             s = t.find(k);
             if (!s) std::cout << "Element not found." << std::endl;
             else std::cout << "[" << k << "]:  '" << s << "'" << std::endl;
         }
         else if (!strcmp("rm", command)) {
             std::cout << "Key:  " << std::ends;
-            if (Input::input(k) == -1) break;
+            if (Input::input(k) == EOF) break;
             try {
                 t.rm(k);
                 std::cout << "Element removed." << std::endl;

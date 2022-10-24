@@ -102,7 +102,7 @@ namespace Lab3 {
         if (!info)
             throw std::invalid_argument("Cannot update: info is nullptr");
         size_t i = _findIndex(key);
-        if (length == 0 || _vector[i]->key != key)
+        if (i >= length || _vector[i]->key != key)
             throw std::invalid_argument("Could not update element: key not found");
         free(_vector[i]->info);
         _vector[i]->info = strdup(info);
@@ -121,7 +121,7 @@ namespace Lab3 {
         if (!length)
             throw std::invalid_argument("Cannot remove element from empty table");
         size_t i = _findIndex(key);
-        if (_vector[i]->key != key)
+        if (i >= length || _vector[i]->key != key)
             throw std::invalid_argument("Could not remove element: key not found");
         free(_vector[i]->info);
         free(_vector[i]);
@@ -133,7 +133,7 @@ namespace Lab3 {
 
     std::istream& OrderedTable::inputElem(std::istream &stream, const int key) {
         size_t i = _findIndex(key);
-        if (length != 0 && _vector[i]->key == key)
+        if (length != 0 && i < length && _vector[i]->key == key)
             throw std::invalid_argument("Element already present");
         char buf[info_length];
         stream.get(buf, info_length);
@@ -175,12 +175,12 @@ namespace Lab3 {
         return length != 0;
     }
 
-    char* const& OrderedTable::operator[](int key) const {
+    const char*& OrderedTable::operator[](int key) const {
         if (!length)
             throw std::invalid_argument("Trying to access elements from empty table");
         size_t i = _findIndex(key);
         if (i < length && _vector[i]->key == key) {
-            return _vector[i]->info;
+            return (const char*&) _vector[i]->info;
         }
         throw std::invalid_argument("Trying to access non-existent element");
     }

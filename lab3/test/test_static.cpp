@@ -66,6 +66,7 @@ TEST (OrderedTableRm, Remove) {
     Lab3::OrderedTable t5;
     ASSERT_THROW(t5.rm(0), std::invalid_argument);
     t5.add(9, "aaa");
+    ASSERT_THROW(t5.rm(99), std::invalid_argument);
     t5.add(5, "aaa");
     t5.add(7, "aaa");
     ASSERT_THROW(t5.rm(-99), std::invalid_argument);

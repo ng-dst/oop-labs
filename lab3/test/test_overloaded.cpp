@@ -17,11 +17,12 @@ TEST (OrderedTableConstructor, CopyConstructor) {
 TEST (OrderedTableOperator, Index) {
     Lab3::OrderedTable t3;
     t3.add(21, "Info string");
-    const char* f2 = t3[21]; // +
+    const Lab3::OrderedTable td(t3);
+    const char* f2 = td[21]; // const ref operator is called
     ASSERT_NE(nullptr, f2);
     ASSERT_EQ(21, t3["Info string"]);
     auto s = strdup("abcdefgh");
-    t3[21] = s;
+    t3[21] = s; // non-const ref operator is called
     ASSERT_STREQ(t3[21], s);
     ASSERT_THROW(t3[-99] = s, std::invalid_argument);
 }

@@ -42,7 +42,7 @@ namespace Lab3 {
         const OrderedTable operator -- (int);
 
         char*& operator [] (int key);
-        char* const& operator [] (int key) const;
+        const char*& operator [] (int key) const;
         int operator [] (const char* info) const;
 
         operator bool() const; // здесь без explicit для удобства записи выражений типа  if(table) { ... }

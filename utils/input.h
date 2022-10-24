@@ -12,7 +12,7 @@ namespace Input {
             if (std::cin.good())
                 return 0;
             if (std::cin.eof())
-                return -1;
+                return EOF;
             std::cin.clear();
             std::cin.ignore();
             std::cout << "Try again" << std::endl;
