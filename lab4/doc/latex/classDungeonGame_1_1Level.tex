@@ -1,0 +1,153 @@
+\hypertarget{classDungeonGame_1_1Level}{}\doxysection{Dungeon\+Game\+::Level Class Reference}
+\label{classDungeonGame_1_1Level}\index{DungeonGame::Level@{DungeonGame::Level}}
+
+
+{\ttfamily \#include $<$Level.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDungeonGame_1_1Level_af54160a2513b9b6aea0d0a580886952f}{Level}} (const string \&dir, uint number, \mbox{\hyperlink{classDungeonGame_1_1Player}{Player}} \&player)
+\item 
+\mbox{\Hypertarget{classDungeonGame_1_1Level_ac146fb7fe9b80a89ef6d28c251637400}\label{classDungeonGame_1_1Level_ac146fb7fe9b80a89ef6d28c251637400}} 
+uint {\bfseries get\+Level\+Number} () const
+\item 
+\mbox{\Hypertarget{classDungeonGame_1_1Level_a9cb9b2d7453276c6bf2b71276f1f15e4}\label{classDungeonGame_1_1Level_a9cb9b2d7453276c6bf2b71276f1f15e4}} 
+const string \& {\bfseries get\+Level\+Title} () const
+\item 
+\mbox{\Hypertarget{classDungeonGame_1_1Level_ada3e11ff63d5b40e3ab86ce44dffc897}\label{classDungeonGame_1_1Level_ada3e11ff63d5b40e3ab86ce44dffc897}} 
+pair$<$ uint, uint $>$ {\bfseries get\+Map\+Size} () const
+\item 
+\mbox{\Hypertarget{classDungeonGame_1_1Level_a60ef71279a2a7a2d921aa9124014d63c}\label{classDungeonGame_1_1Level_a60ef71279a2a7a2d921aa9124014d63c}} 
+vector$<$ vector$<$ Cell $>$ $>$ \& {\bfseries get\+Map} ()
+\item 
+\mbox{\Hypertarget{classDungeonGame_1_1Level_a036efc70a4659dd63b1130359f8dc196}\label{classDungeonGame_1_1Level_a036efc70a4659dd63b1130359f8dc196}} 
+float {\bfseries get\+Move\+Prob} () const
+\item 
+\mbox{\Hypertarget{classDungeonGame_1_1Level_a8db294332a6d3c498f496c5c3a5076b8}\label{classDungeonGame_1_1Level_a8db294332a6d3c498f496c5c3a5076b8}} 
+list$<$ \mbox{\hyperlink{classDungeonGame_1_1Mob}{Mob}} $\ast$ $>$ \& {\bfseries get\+Mob\+List} ()
+\item 
+\mbox{\hyperlink{classDungeonGame_1_1Mob}{Mob}} $\ast$ \mbox{\hyperlink{classDungeonGame_1_1Level_a78e59496d79e527e9c6d82988c30510f}{get\+Mob}} (const pair$<$ uint, uint $>$ \&coords)
+\item 
+\mbox{\Hypertarget{classDungeonGame_1_1Level_a747aa6c7b4835bb77d7915ddde8d8182}\label{classDungeonGame_1_1Level_a747aa6c7b4835bb77d7915ddde8d8182}} 
+\mbox{\hyperlink{classDungeonGame_1_1Mob}{Mob}} $\ast$ {\bfseries get\+Mob} (uint x, uint y)
+\item 
+bool \mbox{\hyperlink{classDungeonGame_1_1Level_a489814a260a5430700dad96380941503}{spawn\+Mob}} (\mbox{\hyperlink{classDungeonGame_1_1Mob}{Mob}} \&mob)
+\item 
+bool \mbox{\hyperlink{classDungeonGame_1_1Level_a3b02186443e7cbb565ff67bb5a15aa47}{rm\+Mob}} (const std\+::pair$<$ uint, uint $>$ \&pos)
+\item 
+\mbox{\Hypertarget{classDungeonGame_1_1Level_a96b5bdfb04e13918a295453bbb1f0761}\label{classDungeonGame_1_1Level_a96b5bdfb04e13918a295453bbb1f0761}} 
+uint {\bfseries get\+Lava\+Dmg} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classDungeonGame_1_1Level_a3b00d1ae70ee5a451970b744861c7e1c}{load\+Level\+Map}} (vector$<$ vector$<$ Cell $>$ $>$ \&lvl\+\_\+map, uint h, uint w, const string \&filename)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classDungeonGame_1_1Level}{Level}} -\/ contains map and list of mobs on the level
+
+Each level has its number and title. Numbers start with 0 and increment with each new level. \mbox{\hyperlink{classDungeonGame_1_1Level}{Level}} is loaded from two files\+:
+\begin{DoxyItemize}
+\item level\+X.\+ini -\/ level config and list of mobs
+\item level\+\_\+map\+X.\+txt -\/ level map, denoted by the following symbols
+\end{DoxyItemize}
+
+\textquotesingle{}.\textquotesingle{} -\/ floor \textquotesingle{}\#\textquotesingle{} -\/ wall, can be broken by explosions \textquotesingle{}\$\textquotesingle{} -\/ bedrock, cannot be broken \textquotesingle{}@\textquotesingle{} -\/ essence, gives player 1 talent point and some mana \textquotesingle{}$\sim$\textquotesingle{} -\/ lava, deals damage upon stepping \textquotesingle{}+\textquotesingle{} -\/ closed door \textquotesingle{}/\textquotesingle{} -\/ open door \textquotesingle{}\texorpdfstring{$<$}{<}\textquotesingle{} -\/ ladder from above, spawnpoint \textquotesingle{}\texorpdfstring{$>$}{>}\textquotesingle{} -\/ ladder down, finish point 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDungeonGame_1_1Level_af54160a2513b9b6aea0d0a580886952f}\label{classDungeonGame_1_1Level_af54160a2513b9b6aea0d0a580886952f}} 
+\index{DungeonGame::Level@{DungeonGame::Level}!Level@{Level}}
+\index{Level@{Level}!DungeonGame::Level@{DungeonGame::Level}}
+\doxysubsubsection{\texorpdfstring{Level()}{Level()}}
+{\footnotesize\ttfamily Dungeon\+Game\+::\+Level\+::\+Level (\begin{DoxyParamCaption}\item[{const string \&}]{dir,  }\item[{uint}]{number,  }\item[{\mbox{\hyperlink{classDungeonGame_1_1Player}{Player}} \&}]{player }\end{DoxyParamCaption})}
+
+Load level from directory by number
+
+
+\begin{DoxyParams}{Parameters}
+{\em dir} & -\/ level directory \\
+\hline
+{\em number} & -\/ level number (0..N-\/1) \\
+\hline
+{\em player} & -\/ reference to player \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDungeonGame_1_1Level_a78e59496d79e527e9c6d82988c30510f}\label{classDungeonGame_1_1Level_a78e59496d79e527e9c6d82988c30510f}} 
+\index{DungeonGame::Level@{DungeonGame::Level}!getMob@{getMob}}
+\index{getMob@{getMob}!DungeonGame::Level@{DungeonGame::Level}}
+\doxysubsubsection{\texorpdfstring{getMob()}{getMob()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDungeonGame_1_1Mob}{Mob}} $\ast$ Dungeon\+Game\+::\+Level\+::get\+Mob (\begin{DoxyParamCaption}\item[{const pair$<$ uint, uint $>$ \&}]{coords }\end{DoxyParamCaption})}
+
+get mob by cell coordinates (algebraic system)
+
+
+\begin{DoxyParams}{Parameters}
+{\em coords} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to mob, if found; nullptr, otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDungeonGame_1_1Level_a3b00d1ae70ee5a451970b744861c7e1c}\label{classDungeonGame_1_1Level_a3b00d1ae70ee5a451970b744861c7e1c}} 
+\index{DungeonGame::Level@{DungeonGame::Level}!loadLevelMap@{loadLevelMap}}
+\index{loadLevelMap@{loadLevelMap}!DungeonGame::Level@{DungeonGame::Level}}
+\doxysubsubsection{\texorpdfstring{loadLevelMap()}{loadLevelMap()}}
+{\footnotesize\ttfamily void Dungeon\+Game\+::\+Level\+::load\+Level\+Map (\begin{DoxyParamCaption}\item[{vector$<$ vector$<$ Cell $>$ $>$ \&}]{lvl\+\_\+map,  }\item[{uint}]{h,  }\item[{uint}]{w,  }\item[{const string \&}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Loads level map from file, writes to lvl\+\_\+map by reference
+
+
+\begin{DoxyParams}{Parameters}
+{\em lvl\+\_\+map} & -\/ reference to 2D vector of cells \\
+\hline
+{\em h} & -\/ map height \\
+\hline
+{\em w} & -\/ map width \\
+\hline
+{\em filename} & -\/ file to read \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDungeonGame_1_1Level_a3b02186443e7cbb565ff67bb5a15aa47}\label{classDungeonGame_1_1Level_a3b02186443e7cbb565ff67bb5a15aa47}} 
+\index{DungeonGame::Level@{DungeonGame::Level}!rmMob@{rmMob}}
+\index{rmMob@{rmMob}!DungeonGame::Level@{DungeonGame::Level}}
+\doxysubsubsection{\texorpdfstring{rmMob()}{rmMob()}}
+{\footnotesize\ttfamily bool Dungeon\+Game\+::\+Level\+::rm\+Mob (\begin{DoxyParamCaption}\item[{const std\+::pair$<$ uint, uint $>$ \&}]{pos }\end{DoxyParamCaption})}
+
+try to remove a mob on specified cell
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & -\/ pair of mob coordinates (algebraic) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true / false, whether removed successfully 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDungeonGame_1_1Level_a489814a260a5430700dad96380941503}\label{classDungeonGame_1_1Level_a489814a260a5430700dad96380941503}} 
+\index{DungeonGame::Level@{DungeonGame::Level}!spawnMob@{spawnMob}}
+\index{spawnMob@{spawnMob}!DungeonGame::Level@{DungeonGame::Level}}
+\doxysubsubsection{\texorpdfstring{spawnMob()}{spawnMob()}}
+{\footnotesize\ttfamily bool Dungeon\+Game\+::\+Level\+::spawn\+Mob (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDungeonGame_1_1Mob}{Mob}} \&}]{mob }\end{DoxyParamCaption})}
+
+try to place a mob on the level
+
+
+\begin{DoxyParams}{Parameters}
+{\em mob} & -\/ reference to mob to spawn \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true / false, whether spawned successfully 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/game/\mbox{\hyperlink{Level_8h}{Level.\+h}}\item 
+src/game/Level.\+cpp\end{DoxyCompactItemize}

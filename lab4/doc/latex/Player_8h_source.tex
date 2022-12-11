@@ -1,0 +1,93 @@
+\hypertarget{Player_8h_source}{}\doxysection{Player.\+h}
+\label{Player_8h_source}\index{src/game/Player.h@{src/game/Player.h}}
+\mbox{\hyperlink{Player_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#ifndef OOP\_PLAYER\_H}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#define OOP\_PLAYER\_H}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <list>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <optional>}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{Entity_8h}{Entity.h}}"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{Level_8h}{Level.h}}"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{Mob_8h}{Mob.h}}"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{RangeCalc_8h}{RangeCalc.h}}"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{TalentConfig_8h}{TalentConfig.h}}"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{Talent_8h}{enum/Talent.h}}"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{EntityType_8h}{enum/EntityType.h}}"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{UndeadType_8h}{enum/UndeadType.h}}"{}}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{keyword}{namespace }DungeonGame \{}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26     \textcolor{keyword}{class }Level;}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{31     \textcolor{keyword}{class }\mbox{\hyperlink{classDungeonGame_1_1Player}{Player}}: \textcolor{keyword}{public} \mbox{\hyperlink{classDungeonGame_1_1Entity}{Entity}} \{}
+\DoxyCodeLine{32         uint max\_mana; }
+\DoxyCodeLine{33         uint mana; }
+\DoxyCodeLine{34         uint exp; }
+\DoxyCodeLine{35         uint level; }
+\DoxyCodeLine{36         map<Talent, uint>\& talents; }
+\DoxyCodeLine{37         uint talent\_points; }
+\DoxyCodeLine{38         \mbox{\hyperlink{structDungeonGame_1_1TalentConfig}{TalentConfig}}\& talent\_config; }
+\DoxyCodeLine{39         uint servant\_count; }
+\DoxyCodeLine{41     \textcolor{keyword}{public}:}
+\DoxyCodeLine{42         \mbox{\hyperlink{classDungeonGame_1_1Player}{Player}}(pair<uint, uint> \mbox{\hyperlink{classDungeonGame_1_1Entity_af85f8ce5837120c05315da0feead0af9}{pos}},}
+\DoxyCodeLine{43                uint \mbox{\hyperlink{classDungeonGame_1_1Entity_a6997471c3c354ebc4bc9992443b14a4f}{max\_hp}},}
+\DoxyCodeLine{44                uint \mbox{\hyperlink{classDungeonGame_1_1Entity_a05db6a6f05ea86d36fe843366720d82d}{atk}},}
+\DoxyCodeLine{45                Fraction \mbox{\hyperlink{classDungeonGame_1_1Entity_ab3a36cd160e445452640c64c98933b50}{fraction}},}
+\DoxyCodeLine{46                uint max\_mana,}
+\DoxyCodeLine{47                uint exp,}
+\DoxyCodeLine{48                uint level,}
+\DoxyCodeLine{49                map<Talent, uint>\& talents,}
+\DoxyCodeLine{50                uint talent\_points,}
+\DoxyCodeLine{51                \mbox{\hyperlink{structDungeonGame_1_1TalentConfig}{TalentConfig}}\& talent\_config);}
+\DoxyCodeLine{52         \mbox{\hyperlink{classDungeonGame_1_1Player}{\string~Player}}();}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54         [[nodiscard]] uint getMana() \textcolor{keyword}{const};}
+\DoxyCodeLine{55         \textcolor{keywordtype}{void} setMana(uint mana);}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57         [[nodiscard]] uint getMaxMana() \textcolor{keyword}{const};}
+\DoxyCodeLine{58         \textcolor{keywordtype}{void} setMaxMana(uint mana);}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60         [[nodiscard]] uint getExp() \textcolor{keyword}{const};}
+\DoxyCodeLine{61         \textcolor{keywordtype}{void} setExp(uint xp);}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{68         \textcolor{keywordtype}{void} \mbox{\hyperlink{classDungeonGame_1_1Player_acebf6e2d4239d87b7080af5d1425d581}{incExp}}(uint dexp);}
+\DoxyCodeLine{69         [[nodiscard]] uint getLevel() \textcolor{keyword}{const};}
+\DoxyCodeLine{70         \textcolor{keywordtype}{void} setLevel(uint lvl);}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72         [[nodiscard]] uint getTalentPoints() \textcolor{keyword}{const};}
+\DoxyCodeLine{73         \textcolor{keywordtype}{void} setTalentPoints(uint points);}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75         [[nodiscard]] uint getTalentLevel(Talent) \textcolor{keyword}{const};}
+\DoxyCodeLine{76         \textcolor{keywordtype}{void} setTalentLevel(Talent, uint level);}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78         [[nodiscard]] uint getServantCount() \textcolor{keyword}{const};}
+\DoxyCodeLine{79         \textcolor{keywordtype}{void} setServantCount(uint count);}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81         [[nodiscard]] \textcolor{keyword}{const} \mbox{\hyperlink{structDungeonGame_1_1TalentConfig}{TalentConfig}}\& getTalentConfig() \textcolor{keyword}{const};}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{95         \mbox{\hyperlink{classDungeonGame_1_1Mob}{Mob}}* \mbox{\hyperlink{classDungeonGame_1_1Player_afc63c68b1f07aaa93fee84dd4857d468}{applyNecromancy}}(\mbox{\hyperlink{classDungeonGame_1_1Mob}{Mob}}\& victim, UndeadType type);}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{109         \mbox{\hyperlink{classDungeonGame_1_1Mob}{Mob}}* \mbox{\hyperlink{classDungeonGame_1_1Player_a7a07fbe51ea629eb5a95659ce2577c41}{applyMorphism}}(\mbox{\hyperlink{classDungeonGame_1_1Mob}{Mob}}\& victim, UndeadType type);}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{123         \textcolor{keywordtype}{bool} \mbox{\hyperlink{classDungeonGame_1_1Player_a541a127e838ca3d3e58085e94acc78a3}{applyCurse}}(\mbox{\hyperlink{classDungeonGame_1_1Level}{Level}}\& field);}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{136         \textcolor{keywordtype}{bool} \mbox{\hyperlink{classDungeonGame_1_1Player_a7a9f45d12e7c2d58bea7c32bcff4728d}{applyUltimate}}(\mbox{\hyperlink{classDungeonGame_1_1Level}{Level}}\& field);}
+\DoxyCodeLine{137 }
+\DoxyCodeLine{138         [[nodiscard]] EntityType \mbox{\hyperlink{classDungeonGame_1_1Player_a61fa3bbe480f90efb3dbace8d7cc4882}{getType}}() \textcolor{keyword}{const override};}
+\DoxyCodeLine{139 }
+\DoxyCodeLine{140     \textcolor{keyword}{private}:}
+\DoxyCodeLine{141         \textcolor{keywordtype}{bool} \_aoeDmg(\mbox{\hyperlink{classDungeonGame_1_1Level}{Level}}\& field, Talent type);}
+\DoxyCodeLine{142 }
+\DoxyCodeLine{143     \};}
+\DoxyCodeLine{144 }
+\DoxyCodeLine{145 \}}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{147 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//OOP\_PLAYER\_H}}
+
+\end{DoxyCode}

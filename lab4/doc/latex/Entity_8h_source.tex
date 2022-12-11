@@ -1,0 +1,58 @@
+\hypertarget{Entity_8h_source}{}\doxysection{Entity.\+h}
+\label{Entity_8h_source}\index{src/game/Entity.h@{src/game/Entity.h}}
+\mbox{\hyperlink{Entity_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#ifndef OOP\_ENTITY\_H}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#define OOP\_ENTITY\_H}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{Direction_8h}{enum/Direction.h}}"{}}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{EntityType_8h}{enum/EntityType.h}}"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{Fraction_8h}{enum/Fraction.h}}"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{namespace }DungeonGame \{}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17     \textcolor{keyword}{class }\mbox{\hyperlink{classDungeonGame_1_1Entity}{Entity}} \{}
+\DoxyCodeLine{22     \textcolor{keyword}{protected}:}
+\DoxyCodeLine{23         std::pair<uint, uint> \mbox{\hyperlink{classDungeonGame_1_1Entity_af85f8ce5837120c05315da0feead0af9}{pos}}; }
+\DoxyCodeLine{24         Direction \mbox{\hyperlink{classDungeonGame_1_1Entity_a10c4e59b7cbdf18ad72a593131f7de9b}{facing}}; }
+\DoxyCodeLine{25         uint \mbox{\hyperlink{classDungeonGame_1_1Entity_a6997471c3c354ebc4bc9992443b14a4f}{max\_hp}}; }
+\DoxyCodeLine{26         uint \mbox{\hyperlink{classDungeonGame_1_1Entity_ac1a834dac263e1cc4786daf8bf076140}{cur\_hp}}; }
+\DoxyCodeLine{27         uint \mbox{\hyperlink{classDungeonGame_1_1Entity_a05db6a6f05ea86d36fe843366720d82d}{atk}}; }
+\DoxyCodeLine{28         Fraction \mbox{\hyperlink{classDungeonGame_1_1Entity_ab3a36cd160e445452640c64c98933b50}{fraction}}; }
+\DoxyCodeLine{29         EntityType type;}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31     \textcolor{keyword}{public}:}
+\DoxyCodeLine{32         [[nodiscard]] std::pair<uint, uint> getPos() \textcolor{keyword}{const};}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34         \textcolor{keywordtype}{void} setPos(std::pair<uint, uint> \mbox{\hyperlink{classDungeonGame_1_1Entity_af85f8ce5837120c05315da0feead0af9}{pos}});}
+\DoxyCodeLine{35         \textcolor{keywordtype}{void} setPos(uint x, uint y);}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37         [[nodiscard]] Direction getFacing() \textcolor{keyword}{const};}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39         \textcolor{keywordtype}{void} setFacing(Direction dir);}
+\DoxyCodeLine{40         \textcolor{keywordtype}{void} setFacing(\textcolor{keywordtype}{char} dir);}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42         [[nodiscard]] uint getAtk() \textcolor{keyword}{const};}
+\DoxyCodeLine{43         \textcolor{keywordtype}{void} setAtk(uint \mbox{\hyperlink{classDungeonGame_1_1Entity_a05db6a6f05ea86d36fe843366720d82d}{atk}});}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45         [[nodiscard]] uint getHp() \textcolor{keyword}{const};}
+\DoxyCodeLine{46         \textcolor{keywordtype}{void} setHp(uint hp);}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48         [[nodiscard]] uint getMaxHp() \textcolor{keyword}{const};}
+\DoxyCodeLine{49         \textcolor{keywordtype}{void} setMaxHp(uint hp);}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51         [[nodiscard]] Fraction getFraction() \textcolor{keyword}{const};}
+\DoxyCodeLine{52         \textcolor{keywordtype}{void} setFraction(Fraction \mbox{\hyperlink{classDungeonGame_1_1Entity_ab3a36cd160e445452640c64c98933b50}{fraction}});}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} damage(uint dmg);}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{61         [[nodiscard]] \textcolor{keyword}{virtual} EntityType \mbox{\hyperlink{classDungeonGame_1_1Entity_aa723f2b43f4bb9a6079b23f312b3221c}{getType}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{62     \};}
+\DoxyCodeLine{63 \}}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//OOP\_ENTITY\_H}}
+
+\end{DoxyCode}

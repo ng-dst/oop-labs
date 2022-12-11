@@ -1,0 +1,64 @@
+\hypertarget{Controls_8h}{}\doxysection{src/game/\+Controls.h File Reference}
+\label{Controls_8h}\index{src/game/Controls.h@{src/game/Controls.h}}
+{\ttfamily \#include \char`\"{}enum/\+Undead\+Type.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$map$>$}\newline
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{Controls_8h_a305b22f94ddc940e3659eb042cf6562d}\label{Controls_8h_a305b22f94ddc940e3659eb042cf6562d}} 
+const char {\bfseries Dungeon\+Game\+::\+Controls\+::\+Move\+Up} = \textquotesingle{}w\textquotesingle{}
+\item 
+\mbox{\Hypertarget{Controls_8h_a20647e36a02a3e4ee9b4e0e137181a64}\label{Controls_8h_a20647e36a02a3e4ee9b4e0e137181a64}} 
+const char {\bfseries Dungeon\+Game\+::\+Controls\+::\+Move\+Left} = \textquotesingle{}a\textquotesingle{}
+\item 
+\mbox{\Hypertarget{Controls_8h_a05d501d7cb27bdfdfd99278e05945580}\label{Controls_8h_a05d501d7cb27bdfdfd99278e05945580}} 
+const char {\bfseries Dungeon\+Game\+::\+Controls\+::\+Move\+Down} = \textquotesingle{}s\textquotesingle{}
+\item 
+\mbox{\Hypertarget{Controls_8h_ac3801c6b4fb496391d17278fb6ab3706}\label{Controls_8h_ac3801c6b4fb496391d17278fb6ab3706}} 
+const char {\bfseries Dungeon\+Game\+::\+Controls\+::\+Move\+Right} = \textquotesingle{}d\textquotesingle{}
+\item 
+\mbox{\Hypertarget{Controls_8h_a421a5781c71f10fd20198b7e006e774e}\label{Controls_8h_a421a5781c71f10fd20198b7e006e774e}} 
+const char {\bfseries Dungeon\+Game\+::\+Controls\+::\+Apply\+Curse} = \textquotesingle{}e\textquotesingle{}
+\item 
+\mbox{\Hypertarget{Controls_8h_a185d88fcafeea5eab1a13731a28cc29f}\label{Controls_8h_a185d88fcafeea5eab1a13731a28cc29f}} 
+const char {\bfseries Dungeon\+Game\+::\+Controls\+::\+Apply\+Ultimate} = \textquotesingle{}q\textquotesingle{}
+\item 
+\mbox{\Hypertarget{Controls_8h_a08994aef5e8c81b294105caf4ee51330}\label{Controls_8h_a08994aef5e8c81b294105caf4ee51330}} 
+const char {\bfseries Dungeon\+Game\+::\+Controls\+::\+Turn\+To\+Zombie} = \textquotesingle{}z\textquotesingle{}
+\item 
+\mbox{\Hypertarget{Controls_8h_a60d5a8d3456b21b913c56864aca79488}\label{Controls_8h_a60d5a8d3456b21b913c56864aca79488}} 
+const char {\bfseries Dungeon\+Game\+::\+Controls\+::\+Turn\+To\+Skeleton} = \textquotesingle{}x\textquotesingle{}
+\item 
+\mbox{\Hypertarget{Controls_8h_a744df9fdd845b0648b23e098153eb99f}\label{Controls_8h_a744df9fdd845b0648b23e098153eb99f}} 
+const char {\bfseries Dungeon\+Game\+::\+Controls\+::\+Turn\+To\+Vampire} = \textquotesingle{}c\textquotesingle{}
+\item 
+\mbox{\Hypertarget{Controls_8h_a3597bd78a5777ab0be6a94d1c04a2292}\label{Controls_8h_a3597bd78a5777ab0be6a94d1c04a2292}} 
+const char {\bfseries Dungeon\+Game\+::\+Controls\+::\+Turn\+To\+Ghoul} = \textquotesingle{}v\textquotesingle{}
+\item 
+const std\+::map$<$ char, Undead\+Type $>$ \mbox{\hyperlink{Controls_8h_ad1521643f81fd531cd703ecf3882ddc1}{Dungeon\+Game\+::\+Controls\+::undead\+Keys}}
+\item 
+\mbox{\Hypertarget{Controls_8h_aeb968dabc1d384a40c11ca0cb390d9b6}\label{Controls_8h_aeb968dabc1d384a40c11ca0cb390d9b6}} 
+const char {\bfseries Dungeon\+Game\+::\+Controls\+::\+All\+Move\+Keys} \mbox{[}$\,$\mbox{]} = \char`\"{}wdsa\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Controls map for keyboard keys 
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{Controls_8h_ad1521643f81fd531cd703ecf3882ddc1}\label{Controls_8h_ad1521643f81fd531cd703ecf3882ddc1}} 
+\index{Controls.h@{Controls.h}!undeadKeys@{undeadKeys}}
+\index{undeadKeys@{undeadKeys}!Controls.h@{Controls.h}}
+\doxysubsubsection{\texorpdfstring{undeadKeys}{undeadKeys}}
+{\footnotesize\ttfamily const std\+::map$<$char, Undead\+Type$>$ Dungeon\+Game\+::\+Controls\+::undead\+Keys}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{            \{TurnToZombie, ZOMBIE\},}
+\DoxyCodeLine{            \{TurnToSkeleton, SKELETON\},}
+\DoxyCodeLine{            \{TurnToVampire, VAMPIRE\},}
+\DoxyCodeLine{            \{TurnToGhoul, GHOUL\},}
+\DoxyCodeLine{    \}}
+
+\end{DoxyCode}

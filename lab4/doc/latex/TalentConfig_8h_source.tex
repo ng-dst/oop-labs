@@ -1,0 +1,63 @@
+\hypertarget{TalentConfig_8h_source}{}\doxysection{Talent\+Config.\+h}
+\label{TalentConfig_8h_source}\index{src/game/TalentConfig.h@{src/game/TalentConfig.h}}
+\mbox{\hyperlink{TalentConfig_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#ifndef OOP\_TALENTCONFIG\_H}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#define OOP\_TALENTCONFIG\_H}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{UndeadType_8h}{enum/UndeadType.h}}"{}}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}../lib/simpleini/SimpleIni.h"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{keyword}{namespace }DungeonGame \{}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{22     \textcolor{keyword}{struct }\mbox{\hyperlink{structDungeonGame_1_1TalentConfig}{TalentConfig}} \{}
+\DoxyCodeLine{23         uint PlayerMaxHpAffix;}
+\DoxyCodeLine{24         uint PlayerMaxManaAffix;}
+\DoxyCodeLine{25         uint PlayerAtkAffix;}
+\DoxyCodeLine{26         uint ExpPerLevel;}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28         uint CurseMaxLevel;}
+\DoxyCodeLine{29         \textcolor{keywordtype}{float} CurseDmgBase;}
+\DoxyCodeLine{30         \textcolor{keywordtype}{float} CurseDmgAffix;}
+\DoxyCodeLine{31         uint CurseRange;}
+\DoxyCodeLine{32         uint CurseCost;}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34         uint WitheringMaxLevel;}
+\DoxyCodeLine{35         \textcolor{keywordtype}{float} WitheringHpBase;}
+\DoxyCodeLine{36         \textcolor{keywordtype}{float} WitheringHpAffix;}
+\DoxyCodeLine{37         uint WitheringManaBase;}
+\DoxyCodeLine{38         uint WitheringManaAffix;}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40         uint NecromancyMaxLevel;}
+\DoxyCodeLine{41         std::map<UndeadType, uint> NecromancyRequiredLevels;}
+\DoxyCodeLine{42         uint NecromancyCostBase;}
+\DoxyCodeLine{43         uint NecromancyCostAffix;}
+\DoxyCodeLine{44         uint NecromancyMaxServantsBase;}
+\DoxyCodeLine{45         uint NecromancyMaxServantsAffix;}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47         uint MorphismMaxLevel;}
+\DoxyCodeLine{48         uint MorphismCostBase;}
+\DoxyCodeLine{49         uint MorphismCostAffix;}
+\DoxyCodeLine{50         std::map<UndeadType, float> MorphismAtkMul;}
+\DoxyCodeLine{51         std::map<UndeadType, uint> MorphismRanges;}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53         uint UltimateMaxLevel;}
+\DoxyCodeLine{54         \textcolor{keywordtype}{float} UltimateDmgBase;}
+\DoxyCodeLine{55         \textcolor{keywordtype}{float} UltimateDmgAffix;}
+\DoxyCodeLine{56         uint UltimateRange;}
+\DoxyCodeLine{57         uint UltimateCost;}
+\DoxyCodeLine{58     \};}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{66     \mbox{\hyperlink{structDungeonGame_1_1TalentConfig}{TalentConfig}}\& loadTalentConfig(CSimpleIniA\& ini);}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 \}}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//OOP\_TALENTCONFIG\_H}}
+
+\end{DoxyCode}

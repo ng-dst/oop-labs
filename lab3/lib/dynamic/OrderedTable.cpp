@@ -70,20 +70,23 @@ namespace Lab3 {
     }
 
     void OrderedTable::_extend() {
-        _vector = (TableElem**) realloc(_vector, (max_size + quota)*sizeof(void*));
+        _vector = (TableElem**) realloc(_vector, (max_size + quota) * 3/2 * sizeof(void*));
         max_size += quota;
     }
 
     void OrderedTable::_shrink() {
-        _vector = (TableElem**) realloc(_vector, (length + 2*quota)*sizeof(void*));
-        max_size = length + 2*quota;
+        _vector = (TableElem**) realloc(_vector, (length + quota)*sizeof(void*));
+        max_size = length + quota;
     }
 
     // -------------------------------- Read / Write methods -------------------------------- //
 
     void OrderedTable::add(TableElem* elem) {
-        if (length >= max_size) _extend();
         size_t i = _findIndex(elem->key);
+        if (i < length && _vector[i]->key == elem->key) {
+            throw std::invalid_argument("Cannot add: duplicate key");
+        }
+        if (length >= max_size) _extend();
         memmove(&_vector[i+1], &_vector[i], (length - i)*sizeof(void*));
         _vector[i] = elem;
         length++;
@@ -153,11 +156,13 @@ namespace Lab3 {
 
     OrderedTable& OrderedTable::operator=(const OrderedTable &t) {
         if (this != &t) {
-            for (int i = 0; i < length; i++) {
-                free(_vector[i]->info);
-                free(_vector[i]);
+            if (_vector) {
+                for (int i = 0; i < length; i++) {
+                    free(_vector[i]->info);
+                    free(_vector[i]);
+                }
+                free(_vector);
             }
-            free(_vector);
             length = t.length;
             max_size = length + quota;
             _vector = (TableElem**) calloc(max_size, sizeof(void*));
@@ -171,18 +176,30 @@ namespace Lab3 {
         return *this;
     }
 
+    OrderedTable& OrderedTable::operator=(OrderedTable &&t) noexcept {
+        if (this != &t) {
+            if (_vector) {
+                for (int i = 0; i < length; i++) {
+                    free(_vector[i]->info);
+                    free(_vector[i]);
+                }
+                free(_vector);
+            }
+            length = t.length;
+            max_size = t.max_size;
+            _vector = t._vector;
+            t.length = 0;
+            t._vector = nullptr;
+        }
+        return *this;
+    }
+
     OrderedTable::operator bool() const {
         return length != 0;
     }
 
     const char*& OrderedTable::operator[](int key) const {
-        if (!length)
-            throw std::invalid_argument("Trying to access elements from empty table");
-        size_t i = _findIndex(key);
-        if (i < length && _vector[i]->key == key) {
-            return (const char*&) _vector[i]->info;
-        }
-        throw std::invalid_argument("Trying to access non-existent element");
+        return (const char*&) (*(OrderedTable*) this)[key];
     }
 
     char*& OrderedTable::operator[](int key) {

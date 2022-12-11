@@ -5,14 +5,17 @@
 #include "TableElemStatic.h"
 
 namespace Lab3 {
-    static const size_t max_size = 1024;
 
     class OrderedTable {
+    public:
+        static const size_t max_size = 1024;
+
     private:
         TableElem _vector[max_size];
         void _cleanup();
         [[nodiscard]] size_t _findIndex(int key) const;
     public:
+
         size_t length;
         OrderedTable();
         OrderedTable(size_t n, TableElem* vector);

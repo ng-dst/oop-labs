@@ -1,0 +1,192 @@
+\hypertarget{classDungeonGame_1_1Player}{}\doxysection{Dungeon\+Game\+::Player Class Reference}
+\label{classDungeonGame_1_1Player}\index{DungeonGame::Player@{DungeonGame::Player}}
+
+
+{\ttfamily \#include $<$Player.\+h$>$}
+
+Inheritance diagram for Dungeon\+Game\+::Player\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classDungeonGame_1_1Player}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDungeonGame_1_1Player_a185cf1268cd5f0cdf541dbd4006b5dc6}\label{classDungeonGame_1_1Player_a185cf1268cd5f0cdf541dbd4006b5dc6}} 
+{\bfseries Player} (pair$<$ uint, uint $>$ \mbox{\hyperlink{classDungeonGame_1_1Entity_af85f8ce5837120c05315da0feead0af9}{pos}}, uint \mbox{\hyperlink{classDungeonGame_1_1Entity_a6997471c3c354ebc4bc9992443b14a4f}{max\+\_\+hp}}, uint \mbox{\hyperlink{classDungeonGame_1_1Entity_a05db6a6f05ea86d36fe843366720d82d}{atk}}, Fraction \mbox{\hyperlink{classDungeonGame_1_1Entity_ab3a36cd160e445452640c64c98933b50}{fraction}}, uint max\+\_\+mana, uint exp, uint level, map$<$ Talent, uint $>$ \&talents, uint talent\+\_\+points, \mbox{\hyperlink{structDungeonGame_1_1TalentConfig}{Talent\+Config}} \&talent\+\_\+config)
+\item 
+\mbox{\Hypertarget{classDungeonGame_1_1Player_aab4bb939daf0a50087e9b3e024e62061}\label{classDungeonGame_1_1Player_aab4bb939daf0a50087e9b3e024e62061}} 
+uint {\bfseries get\+Mana} () const
+\item 
+\mbox{\Hypertarget{classDungeonGame_1_1Player_a972ae7d7f50bdb44a70e7ee6edde12ed}\label{classDungeonGame_1_1Player_a972ae7d7f50bdb44a70e7ee6edde12ed}} 
+void {\bfseries set\+Mana} (uint mana)
+\item 
+\mbox{\Hypertarget{classDungeonGame_1_1Player_ad59d9aa59ce6354053b3e138dfc033ad}\label{classDungeonGame_1_1Player_ad59d9aa59ce6354053b3e138dfc033ad}} 
+uint {\bfseries get\+Max\+Mana} () const
+\item 
+\mbox{\Hypertarget{classDungeonGame_1_1Player_a07df6130596447a8051abc285fac9dbe}\label{classDungeonGame_1_1Player_a07df6130596447a8051abc285fac9dbe}} 
+void {\bfseries set\+Max\+Mana} (uint mana)
+\item 
+\mbox{\Hypertarget{classDungeonGame_1_1Player_a624431ebb7724bb73f3c11fad59ded08}\label{classDungeonGame_1_1Player_a624431ebb7724bb73f3c11fad59ded08}} 
+uint {\bfseries get\+Exp} () const
+\item 
+\mbox{\Hypertarget{classDungeonGame_1_1Player_a9b91f544431a79fe1fb2a3549e6f7c6c}\label{classDungeonGame_1_1Player_a9b91f544431a79fe1fb2a3549e6f7c6c}} 
+void {\bfseries set\+Exp} (uint xp)
+\item 
+void \mbox{\hyperlink{classDungeonGame_1_1Player_acebf6e2d4239d87b7080af5d1425d581}{inc\+Exp}} (uint dexp)
+\item 
+\mbox{\Hypertarget{classDungeonGame_1_1Player_a40b4936f674ac57dc328c0648ae3ccab}\label{classDungeonGame_1_1Player_a40b4936f674ac57dc328c0648ae3ccab}} 
+uint {\bfseries get\+Level} () const
+\item 
+\mbox{\Hypertarget{classDungeonGame_1_1Player_add2b31301f1e967195d75801bc93abe8}\label{classDungeonGame_1_1Player_add2b31301f1e967195d75801bc93abe8}} 
+void {\bfseries set\+Level} (uint lvl)
+\item 
+\mbox{\Hypertarget{classDungeonGame_1_1Player_a09ae0709a01f80e372b837acbaf5e268}\label{classDungeonGame_1_1Player_a09ae0709a01f80e372b837acbaf5e268}} 
+uint {\bfseries get\+Talent\+Points} () const
+\item 
+\mbox{\Hypertarget{classDungeonGame_1_1Player_a1177e1246b305d27c7cca166e67623b8}\label{classDungeonGame_1_1Player_a1177e1246b305d27c7cca166e67623b8}} 
+void {\bfseries set\+Talent\+Points} (uint points)
+\item 
+\mbox{\Hypertarget{classDungeonGame_1_1Player_a59139ec4fd08ae8e58c6cc288ba1f8ad}\label{classDungeonGame_1_1Player_a59139ec4fd08ae8e58c6cc288ba1f8ad}} 
+uint {\bfseries get\+Talent\+Level} (Talent) const
+\item 
+\mbox{\Hypertarget{classDungeonGame_1_1Player_ad7287e844be6aa34ddcff0cd830c24ba}\label{classDungeonGame_1_1Player_ad7287e844be6aa34ddcff0cd830c24ba}} 
+void {\bfseries set\+Talent\+Level} (Talent, uint level)
+\item 
+\mbox{\Hypertarget{classDungeonGame_1_1Player_a207558cc22682c1cb3d942574d8607b7}\label{classDungeonGame_1_1Player_a207558cc22682c1cb3d942574d8607b7}} 
+uint {\bfseries get\+Servant\+Count} () const
+\item 
+\mbox{\Hypertarget{classDungeonGame_1_1Player_a2785e39c0d8274a375967bbf7ee89b06}\label{classDungeonGame_1_1Player_a2785e39c0d8274a375967bbf7ee89b06}} 
+void {\bfseries set\+Servant\+Count} (uint count)
+\item 
+\mbox{\Hypertarget{classDungeonGame_1_1Player_ac8f573ed2392ae852288d4cb8dd34336}\label{classDungeonGame_1_1Player_ac8f573ed2392ae852288d4cb8dd34336}} 
+const \mbox{\hyperlink{structDungeonGame_1_1TalentConfig}{Talent\+Config}} \& {\bfseries get\+Talent\+Config} () const
+\item 
+\mbox{\hyperlink{classDungeonGame_1_1Mob}{Mob}} $\ast$ \mbox{\hyperlink{classDungeonGame_1_1Player_afc63c68b1f07aaa93fee84dd4857d468}{apply\+Necromancy}} (\mbox{\hyperlink{classDungeonGame_1_1Mob}{Mob}} \&victim, Undead\+Type type)
+\item 
+\mbox{\hyperlink{classDungeonGame_1_1Mob}{Mob}} $\ast$ \mbox{\hyperlink{classDungeonGame_1_1Player_a7a07fbe51ea629eb5a95659ce2577c41}{apply\+Morphism}} (\mbox{\hyperlink{classDungeonGame_1_1Mob}{Mob}} \&victim, Undead\+Type type)
+\item 
+bool \mbox{\hyperlink{classDungeonGame_1_1Player_a541a127e838ca3d3e58085e94acc78a3}{apply\+Curse}} (\mbox{\hyperlink{classDungeonGame_1_1Level}{Level}} \&field)
+\item 
+bool \mbox{\hyperlink{classDungeonGame_1_1Player_a7a9f45d12e7c2d58bea7c32bcff4728d}{apply\+Ultimate}} (\mbox{\hyperlink{classDungeonGame_1_1Level}{Level}} \&field)
+\item 
+Entity\+Type \mbox{\hyperlink{classDungeonGame_1_1Player_a61fa3bbe480f90efb3dbace8d7cc4882}{get\+Type}} () const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Main entity controllable by player 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDungeonGame_1_1Player_a541a127e838ca3d3e58085e94acc78a3}\label{classDungeonGame_1_1Player_a541a127e838ca3d3e58085e94acc78a3}} 
+\index{DungeonGame::Player@{DungeonGame::Player}!applyCurse@{applyCurse}}
+\index{applyCurse@{applyCurse}!DungeonGame::Player@{DungeonGame::Player}}
+\doxysubsubsection{\texorpdfstring{applyCurse()}{applyCurse()}}
+{\footnotesize\ttfamily bool Dungeon\+Game\+::\+Player\+::apply\+Curse (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDungeonGame_1_1Level}{Level}} \&}]{field }\end{DoxyParamCaption})}
+
+Apply player skill -\/ Curse, AoE damage (directed)
+
+Deals AoE damage to enemies in player\textquotesingle{}s facing direction within a certain range (constant range, set in Talent Config) Damage is upgradable and uses base ATK, with a multiplier set in Talent Config Requires mana (constant cost, set in Talent Config)
+
+
+\begin{DoxyParams}{Parameters}
+{\em field} & -\/ current \mbox{\hyperlink{classDungeonGame_1_1Level}{Level}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true / false, whether applied successfully 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDungeonGame_1_1Player_a7a07fbe51ea629eb5a95659ce2577c41}\label{classDungeonGame_1_1Player_a7a07fbe51ea629eb5a95659ce2577c41}} 
+\index{DungeonGame::Player@{DungeonGame::Player}!applyMorphism@{applyMorphism}}
+\index{applyMorphism@{applyMorphism}!DungeonGame::Player@{DungeonGame::Player}}
+\doxysubsubsection{\texorpdfstring{applyMorphism()}{applyMorphism()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDungeonGame_1_1Mob}{Mob}} $\ast$ Dungeon\+Game\+::\+Player\+::apply\+Morphism (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDungeonGame_1_1Mob}{Mob}} \&}]{victim,  }\item[{Undead\+Type}]{type }\end{DoxyParamCaption})}
+
+Apply player skill -\/ Morphism, on victim
+
+When facing an \mbox{\hyperlink{classDungeonGame_1_1Undead}{Undead}}, transforms them into other \mbox{\hyperlink{classDungeonGame_1_1Undead}{Undead}} type Requires mana (upgradable cost, set in Talent Config) Both \mbox{\hyperlink{classDungeonGame_1_1Undead}{Undead}} types require respective talent level to apply skill
+
+
+\begin{DoxyParams}{Parameters}
+{\em victim} & -\/ an \mbox{\hyperlink{classDungeonGame_1_1Undead}{Undead}} (any fraction) \\
+\hline
+{\em type} & -\/ desired type \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to the same mob (victim), if successful; nullptr, otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDungeonGame_1_1Player_afc63c68b1f07aaa93fee84dd4857d468}\label{classDungeonGame_1_1Player_afc63c68b1f07aaa93fee84dd4857d468}} 
+\index{DungeonGame::Player@{DungeonGame::Player}!applyNecromancy@{applyNecromancy}}
+\index{applyNecromancy@{applyNecromancy}!DungeonGame::Player@{DungeonGame::Player}}
+\doxysubsubsection{\texorpdfstring{applyNecromancy()}{applyNecromancy()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDungeonGame_1_1Mob}{Mob}} $\ast$ Dungeon\+Game\+::\+Player\+::apply\+Necromancy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDungeonGame_1_1Mob}{Mob}} \&}]{victim,  }\item[{Undead\+Type}]{type }\end{DoxyParamCaption})}
+
+Apply player skill -\/ Necromancy, on victim
+
+When facing a dead \mbox{\hyperlink{classDungeonGame_1_1Mortal}{Mortal}}, turns them into \mbox{\hyperlink{classDungeonGame_1_1Undead}{Undead}} with player\textquotesingle{}s fraction. Requires mana (upgradable cost, set in Talent Config) Each \mbox{\hyperlink{classDungeonGame_1_1Undead}{Undead}} type requires respective talent level to apply skill
+
+
+\begin{DoxyParams}{Parameters}
+{\em victim} & -\/ reference to dead (0 HP) \mbox{\hyperlink{classDungeonGame_1_1Mortal}{Mortal}} mob \\
+\hline
+{\em type} & -\/ desired \mbox{\hyperlink{classDungeonGame_1_1Undead}{Undead}} type \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to summoned mob, if successful; nullptr otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDungeonGame_1_1Player_a7a9f45d12e7c2d58bea7c32bcff4728d}\label{classDungeonGame_1_1Player_a7a9f45d12e7c2d58bea7c32bcff4728d}} 
+\index{DungeonGame::Player@{DungeonGame::Player}!applyUltimate@{applyUltimate}}
+\index{applyUltimate@{applyUltimate}!DungeonGame::Player@{DungeonGame::Player}}
+\doxysubsubsection{\texorpdfstring{applyUltimate()}{applyUltimate()}}
+{\footnotesize\ttfamily bool Dungeon\+Game\+::\+Player\+::apply\+Ultimate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDungeonGame_1_1Level}{Level}} \&}]{field }\end{DoxyParamCaption})}
+
+Apply player skill -\/ Ultimate, AoE damage (undirected)
+
+Deals large AoE damage to all surrounding enemies within a certain range (constant range, set in Talent Config) Damage is upgradable and uses base ATK, with a multiplier set in Talent Config
+
+
+\begin{DoxyParams}{Parameters}
+{\em field} & -\/ current \mbox{\hyperlink{classDungeonGame_1_1Level}{Level}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true / false, whether applied successfully 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDungeonGame_1_1Player_a61fa3bbe480f90efb3dbace8d7cc4882}\label{classDungeonGame_1_1Player_a61fa3bbe480f90efb3dbace8d7cc4882}} 
+\index{DungeonGame::Player@{DungeonGame::Player}!getType@{getType}}
+\index{getType@{getType}!DungeonGame::Player@{DungeonGame::Player}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily Entity\+Type Dungeon\+Game\+::\+Player\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+virtual method to \textquotesingle{}know what class is it\textquotesingle{} -\/ useful when working with abstract \mbox{\hyperlink{classDungeonGame_1_1Entity}{Entity}} pointers
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classDungeonGame_1_1Entity}{Entity}} Type of current entity 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classDungeonGame_1_1Entity_aa723f2b43f4bb9a6079b23f312b3221c}{Dungeon\+Game\+::\+Entity}}.
+
+\mbox{\Hypertarget{classDungeonGame_1_1Player_acebf6e2d4239d87b7080af5d1425d581}\label{classDungeonGame_1_1Player_acebf6e2d4239d87b7080af5d1425d581}} 
+\index{DungeonGame::Player@{DungeonGame::Player}!incExp@{incExp}}
+\index{incExp@{incExp}!DungeonGame::Player@{DungeonGame::Player}}
+\doxysubsubsection{\texorpdfstring{incExp()}{incExp()}}
+{\footnotesize\ttfamily void Dungeon\+Game\+::\+Player\+::inc\+Exp (\begin{DoxyParamCaption}\item[{uint}]{dexp }\end{DoxyParamCaption})}
+
+Increase player\textquotesingle{}s EXP, upgrading player level on thresholds
+
+
+\begin{DoxyParams}{Parameters}
+{\em dexp} & -\/ value of gained EXP \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/game/\mbox{\hyperlink{Player_8h}{Player.\+h}}\item 
+src/game/Player.\+cpp\end{DoxyCompactItemize}

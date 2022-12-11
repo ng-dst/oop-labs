@@ -27,67 +27,58 @@ void interactive() {
     std::cout << "For command list, enter '?'" << std::endl;
 
     while (true) {
-        if (Input::input(command) == EOF) break;
-        if (command[0] == '?') print_commands();
+        try {
+            if (Input::input(command) == EOF) break;
+            if (command[0] == '?') print_commands();
 
-        else if (!strcmp("add", command)) {
-            std::cout << "Key:  " << std::ends;
-            if (Input::input(k) == EOF) break;
-            std::cout << "Info:  " << std::ends;
-            if (Input::input(info) == EOF) break;
-            t.add(k, info);
-            std::cout << "Element added." << std::endl;
-        }
-        else if (!strcmp("update", command)) {
-            std::cout << "Key:  " << std::ends;
-            if (Input::input(k) == EOF) break;
-            std::cout << "Info:  " << std::ends;
-            if (Input::input(info) == EOF) break;
-            try {
+            else if (!strcmp("add", command)) {
+                std::cout << "Key:  " << std::ends;
+                if (Input::input(k) == EOF) break;
+                std::cout << "Info:  " << std::ends;
+                if (Input::input(info) == EOF) break;
+                t.add(k, info);
+                std::cout << "Element added." << std::endl;
+            }
+            else if (!strcmp("update", command)) {
+                std::cout << "Key:  " << std::ends;
+                if (Input::input(k) == EOF) break;
+                std::cout << "Info:  " << std::ends;
+                if (Input::input(info) == EOF) break;
                 t.update(k, info);
                 std::cout << "Info updated." << std::endl;
             }
-            catch (std::invalid_argument& e) {
-                std::cout << "Error: " << e.what() << std::endl;
-            }
-        }
-        else if (!strcmp("input", command)) {
-            std::cout << "Key:  " << std::ends;
-            if (Input::input(k) == EOF) break;
-            std::cout << "Info:  " << std::ends;
-            try {
+            else if (!strcmp("input", command)) {
+                std::cout << "Key:  " << std::ends;
+                if (Input::input(k) == EOF) break;
+                std::cout << "Info:  " << std::ends;
                 std::cin.ignore();
                 t.inputElem(std::cin, k);
                 std::cout << "Element added." << std::endl;
             }
-            catch (std::exception& e) {
-                std::cout << "Error: " << e.what() << std::endl;
+            else if (!strcmp("find", command)) {
+                std::cout << "Key:  " << std::ends;
+                if (Input::input(k) == EOF) break;
+                s = t.find(k);
+                if (!s) std::cout << "Element not found." << std::endl;
+                else std::cout << "[" << k << "]:  '" << s << "'" << std::endl;
             }
-        }
-        else if (!strcmp("find", command)) {
-            std::cout << "Key:  " << std::ends;
-            if (Input::input(k) == EOF) break;
-            s = t.find(k);
-            if (!s) std::cout << "Element not found." << std::endl;
-            else std::cout << "[" << k << "]:  '" << s << "'" << std::endl;
-        }
-        else if (!strcmp("rm", command)) {
-            std::cout << "Key:  " << std::ends;
-            if (Input::input(k) == EOF) break;
-            try {
+            else if (!strcmp("rm", command)) {
+                std::cout << "Key:  " << std::ends;
+                if (Input::input(k) == EOF) break;
                 t.rm(k);
                 std::cout << "Element removed." << std::endl;
             }
-            catch (std::invalid_argument& e) {
-                std::cout << "Error: " << e.what() << std::endl;
+            else if (!strcmp("print", command)) {
+                t.print(std::cout);
             }
-        }
-        else if (!strcmp("print", command)) {
-            t.print(std::cout);
-        }
 
-        else if (!strcmp("exit", command)) break;
-        else std::cout << "Unknown command. Try again" << std::endl;
+            else if (!strcmp("exit", command)) break;
+            else std::cout << "Unknown command. Try again" << std::endl;
+
+        }
+        catch (std::exception& e) {
+            std::cout << e.what() << std::endl;
+        }
     }
 }
 

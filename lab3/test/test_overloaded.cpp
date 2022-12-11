@@ -14,6 +14,31 @@ TEST (OrderedTableConstructor, CopyConstructor) {
     ASSERT_STREQ("456", t2.find(123));
 }
 
+#ifdef DYNAMIC
+TEST (OrderedTableConstructor, MoveConstructor) {
+    Lab3::OrderedTable t1;
+    t1.add(123, "456");
+    Lab3::OrderedTable t2(std::move(t1));
+    ASSERT_EQ(1, t2.length);
+    ASSERT_STREQ("456", t2.find(123));
+}
+
+TEST (OrderedTableOperator, AssignmentCopy) {
+    Lab3::OrderedTable te;
+    te.add(123, "456");
+    Lab3::OrderedTable tf = te;
+    ASSERT_NE(nullptr, tf.find(123));
+    ASSERT_NE(nullptr, te.find(123));
+}
+
+TEST (OrderedTableOperator, AssignmentMove) {
+    Lab3::OrderedTable t00;
+    t00.add(123, "456");
+    Lab3::OrderedTable t01 = std::move(t00);
+    ASSERT_NE(nullptr, t01.find(123));
+}
+#endif
+
 TEST (OrderedTableOperator, Index) {
     Lab3::OrderedTable t3;
     t3.add(21, "Info string");

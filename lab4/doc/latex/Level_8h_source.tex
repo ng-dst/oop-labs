@@ -1,0 +1,67 @@
+\hypertarget{Level_8h_source}{}\doxysection{Level.\+h}
+\label{Level_8h_source}\index{src/game/Level.h@{src/game/Level.h}}
+\mbox{\hyperlink{Level_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#ifndef OOP\_LEVEL\_H}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#define OOP\_LEVEL\_H}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <optional>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <list>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{Golem_8h}{mobs/Golem.h}}"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{Mortal_8h}{mobs/Mortal.h}}"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{Undead_8h}{mobs/Undead.h}}"{}}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{TalentConfig_8h}{TalentConfig.h}}"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{Cell_8h}{enum/Cell.h}}"{}}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{keyword}{namespace }DungeonGame \{}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26     \textcolor{keyword}{class }Player;}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{47     \textcolor{keyword}{class }\mbox{\hyperlink{classDungeonGame_1_1Level}{Level}} \{}
+\DoxyCodeLine{48         uint level\_number; }
+\DoxyCodeLine{49         \textcolor{keywordtype}{string} level\_title; }
+\DoxyCodeLine{50         list<Mob*> mobs; }
+\DoxyCodeLine{51         pair<uint, uint> level\_size; }
+\DoxyCodeLine{52         vector<vector<Cell>> level\_map; }
+\DoxyCodeLine{53         uint lava\_dmg; }
+\DoxyCodeLine{54         \textcolor{keywordtype}{float} move\_prob; }
+\DoxyCodeLine{56     \textcolor{keyword}{public}:}
+\DoxyCodeLine{64         \mbox{\hyperlink{classDungeonGame_1_1Level}{Level}}(\textcolor{keyword}{const} \textcolor{keywordtype}{string}\& dir, uint number, \mbox{\hyperlink{classDungeonGame_1_1Player}{Player}}\& player);}
+\DoxyCodeLine{65         \mbox{\hyperlink{classDungeonGame_1_1Level}{\string~Level}}();}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67         \textcolor{comment}{// static Level\& fromDir(const string\& dir, const uint number, Player\& player);}}
+\DoxyCodeLine{76 \textcolor{comment}{}        \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{classDungeonGame_1_1Level_a3b00d1ae70ee5a451970b744861c7e1c}{loadLevelMap}}(vector<vector<Cell>>\& lvl\_map, uint h, uint w, \textcolor{keyword}{const} \textcolor{keywordtype}{string}\& filename);}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78         [[nodiscard]] uint getLevelNumber() \textcolor{keyword}{const};}
+\DoxyCodeLine{79         [[nodiscard]] \textcolor{keyword}{const} \textcolor{keywordtype}{string}\& getLevelTitle() \textcolor{keyword}{const};}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81         [[nodiscard]] pair<uint, uint> getMapSize() \textcolor{keyword}{const};}
+\DoxyCodeLine{82         vector<vector<Cell>>\& getMap();}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84         [[nodiscard]] \textcolor{keywordtype}{float} getMoveProb() \textcolor{keyword}{const};}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86         list<Mob*>\& getMobList();}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{94         \mbox{\hyperlink{classDungeonGame_1_1Mob}{Mob}}* \mbox{\hyperlink{classDungeonGame_1_1Level_a78e59496d79e527e9c6d82988c30510f}{getMob}}(\textcolor{keyword}{const} pair<uint, uint>\& coords);}
+\DoxyCodeLine{95         \mbox{\hyperlink{classDungeonGame_1_1Mob}{Mob}}* \mbox{\hyperlink{classDungeonGame_1_1Level_a78e59496d79e527e9c6d82988c30510f}{getMob}}(uint x, uint y);}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{103         \textcolor{keywordtype}{bool} \mbox{\hyperlink{classDungeonGame_1_1Level_a489814a260a5430700dad96380941503}{spawnMob}}(\mbox{\hyperlink{classDungeonGame_1_1Mob}{Mob}}\& mob);}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{111         \textcolor{keywordtype}{bool} \mbox{\hyperlink{classDungeonGame_1_1Level_a3b02186443e7cbb565ff67bb5a15aa47}{rmMob}}(\textcolor{keyword}{const} std::pair<uint, uint>\& pos);}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113         [[nodiscard]] uint getLavaDmg() \textcolor{keyword}{const};}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{115     \};}
+\DoxyCodeLine{116 \}}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//OOP\_LEVEL\_H}}
+
+\end{DoxyCode}

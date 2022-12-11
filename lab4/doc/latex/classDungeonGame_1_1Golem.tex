@@ -1,0 +1,79 @@
+\hypertarget{classDungeonGame_1_1Golem}{}\doxysection{Dungeon\+Game\+::Golem Class Reference}
+\label{classDungeonGame_1_1Golem}\index{DungeonGame::Golem@{DungeonGame::Golem}}
+
+
+{\ttfamily \#include $<$Golem.\+h$>$}
+
+Inheritance diagram for Dungeon\+Game\+::Golem\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classDungeonGame_1_1Golem}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDungeonGame_1_1Golem_a1bcfa26993cb20a17a40a3b982d21e0c}\label{classDungeonGame_1_1Golem_a1bcfa26993cb20a17a40a3b982d21e0c}} 
+{\bfseries Golem} (std\+::pair$<$ uint, uint $>$ \mbox{\hyperlink{classDungeonGame_1_1Entity_af85f8ce5837120c05315da0feead0af9}{pos}}, uint \mbox{\hyperlink{classDungeonGame_1_1Entity_a6997471c3c354ebc4bc9992443b14a4f}{max\+\_\+hp}}, uint \mbox{\hyperlink{classDungeonGame_1_1Entity_a05db6a6f05ea86d36fe843366720d82d}{atk}}, uint \mbox{\hyperlink{classDungeonGame_1_1Mob_ab142ff151a4d8c8409fcb942280474e1}{atk\+\_\+range}}, uint \mbox{\hyperlink{classDungeonGame_1_1Mob_a11c8d4b02f844e9cb2eb1916f6f5a6b0}{vis\+\_\+range}}, uint \mbox{\hyperlink{classDungeonGame_1_1Mob_a3db7b49a1567744c841e36f6d18a331d}{speed}}, Fraction \mbox{\hyperlink{classDungeonGame_1_1Entity_ab3a36cd160e445452640c64c98933b50}{fraction}}, const std\+::string \&\mbox{\hyperlink{classDungeonGame_1_1Mob_aeac7e5875b067fb8731a05a0171a7306}{name}}, Golem\+Element\+Type type, float dodge\+\_\+prob)
+\item 
+\mbox{\Hypertarget{classDungeonGame_1_1Golem_a1b536a5ff7b69e0c838178ff794cf045}\label{classDungeonGame_1_1Golem_a1b536a5ff7b69e0c838178ff794cf045}} 
+Golem\+Element\+Type {\bfseries get\+Golem\+Type} () const
+\item 
+\mbox{\Hypertarget{classDungeonGame_1_1Golem_a9359500ef930d7a45a72854e4fd74f30}\label{classDungeonGame_1_1Golem_a9359500ef930d7a45a72854e4fd74f30}} 
+void {\bfseries set\+Golem\+Type} (Golem\+Element\+Type type)
+\item 
+\mbox{\Hypertarget{classDungeonGame_1_1Golem_adf73600f9592178aae8de9d6ab1d2845}\label{classDungeonGame_1_1Golem_adf73600f9592178aae8de9d6ab1d2845}} 
+float {\bfseries get\+Dodge\+Prob} () const
+\item 
+\mbox{\Hypertarget{classDungeonGame_1_1Golem_a56716fc075a1afde516a09ddf34a7aff}\label{classDungeonGame_1_1Golem_a56716fc075a1afde516a09ddf34a7aff}} 
+void {\bfseries set\+Dodge\+Prob} (float prob)
+\item 
+void \mbox{\hyperlink{classDungeonGame_1_1Golem_ad22e77e21d15d75b5d7c01bde6977de1}{damage}} (uint dmg) override
+\item 
+Entity\+Type \mbox{\hyperlink{classDungeonGame_1_1Golem_adaa5dc441cbe23e970160e8ee7b77320}{get\+Type}} () const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classDungeonGame_1_1Golem}{Golem}} -\/ type of mob
+
+can have different elemental types, altering effects caused by their death, can dodge enemy attacks with a set probability. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDungeonGame_1_1Golem_ad22e77e21d15d75b5d7c01bde6977de1}\label{classDungeonGame_1_1Golem_ad22e77e21d15d75b5d7c01bde6977de1}} 
+\index{DungeonGame::Golem@{DungeonGame::Golem}!damage@{damage}}
+\index{damage@{damage}!DungeonGame::Golem@{DungeonGame::Golem}}
+\doxysubsubsection{\texorpdfstring{damage()}{damage()}}
+{\footnotesize\ttfamily void Dungeon\+Game\+::\+Golem\+::damage (\begin{DoxyParamCaption}\item[{uint}]{dmg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+overridden\+: try to dodge when taking damage 
+\begin{DoxyParams}{Parameters}
+{\em dmg} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classDungeonGame_1_1Entity}{Dungeon\+Game\+::\+Entity}}.
+
+\mbox{\Hypertarget{classDungeonGame_1_1Golem_adaa5dc441cbe23e970160e8ee7b77320}\label{classDungeonGame_1_1Golem_adaa5dc441cbe23e970160e8ee7b77320}} 
+\index{DungeonGame::Golem@{DungeonGame::Golem}!getType@{getType}}
+\index{getType@{getType}!DungeonGame::Golem@{DungeonGame::Golem}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily Entity\+Type Dungeon\+Game\+::\+Golem\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+virtual method to \textquotesingle{}know what class is it\textquotesingle{} -\/ useful when working with abstract \mbox{\hyperlink{classDungeonGame_1_1Entity}{Entity}} pointers
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classDungeonGame_1_1Entity}{Entity}} Type of current entity 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classDungeonGame_1_1Entity_aa723f2b43f4bb9a6079b23f312b3221c}{Dungeon\+Game\+::\+Entity}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/game/mobs/\mbox{\hyperlink{Golem_8h}{Golem.\+h}}\item 
+src/game/mobs/Golem.\+cpp\end{DoxyCompactItemize}

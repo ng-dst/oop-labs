@@ -173,7 +173,7 @@ namespace Lab3 {
         return *this;
     }
 
-    OrderedTable OrderedTable::operator+(const OrderedTable &t) {
+    OrderedTable OrderedTable::operator+(const OrderedTable &t) const {
         OrderedTable tmp(*this);
         tmp += t;
         return tmp;

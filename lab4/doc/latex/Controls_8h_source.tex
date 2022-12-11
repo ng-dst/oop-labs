@@ -1,0 +1,39 @@
+\hypertarget{Controls_8h_source}{}\doxysection{Controls.\+h}
+\label{Controls_8h_source}\index{src/game/Controls.h@{src/game/Controls.h}}
+\mbox{\hyperlink{Controls_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#ifndef OOP\_KEYS\_H}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#define OOP\_KEYS\_H}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{UndeadType_8h}{enum/UndeadType.h}}"{}}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{keyword}{namespace }DungeonGame::Controls \{}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14     \textcolor{keyword}{const} \textcolor{keywordtype}{char} MoveUp = \textcolor{charliteral}{'w'};}
+\DoxyCodeLine{15     \textcolor{keyword}{const} \textcolor{keywordtype}{char} MoveLeft = \textcolor{charliteral}{'a'};}
+\DoxyCodeLine{16     \textcolor{keyword}{const} \textcolor{keywordtype}{char} MoveDown = \textcolor{charliteral}{'s'};}
+\DoxyCodeLine{17     \textcolor{keyword}{const} \textcolor{keywordtype}{char} MoveRight = \textcolor{charliteral}{'d'};}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19     \textcolor{keyword}{const} \textcolor{keywordtype}{char} ApplyCurse = \textcolor{charliteral}{'e'};}
+\DoxyCodeLine{20     \textcolor{keyword}{const} \textcolor{keywordtype}{char} ApplyUltimate = \textcolor{charliteral}{'q'};}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22     \textcolor{keyword}{const} \textcolor{keywordtype}{char} TurnToZombie = \textcolor{charliteral}{'z'};}
+\DoxyCodeLine{23     \textcolor{keyword}{const} \textcolor{keywordtype}{char} TurnToSkeleton = \textcolor{charliteral}{'x'};}
+\DoxyCodeLine{24     \textcolor{keyword}{const} \textcolor{keywordtype}{char} TurnToVampire = \textcolor{charliteral}{'c'};}
+\DoxyCodeLine{25     \textcolor{keyword}{const} \textcolor{keywordtype}{char} TurnToGhoul = \textcolor{charliteral}{'v'};}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27     \textcolor{keyword}{const} std::map<char, UndeadType> undeadKeys \{}
+\DoxyCodeLine{28             \{TurnToZombie, ZOMBIE\},}
+\DoxyCodeLine{29             \{TurnToSkeleton, SKELETON\},}
+\DoxyCodeLine{30             \{TurnToVampire, VAMPIRE\},}
+\DoxyCodeLine{31             \{TurnToGhoul, GHOUL\},}
+\DoxyCodeLine{32     \};}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34     \textcolor{keyword}{const} \textcolor{keywordtype}{char} AllMoveKeys[] = \textcolor{stringliteral}{"{}wdsa"{}};}
+\DoxyCodeLine{35 \}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//OOP\_KEYS\_H}}
+
+\end{DoxyCode}

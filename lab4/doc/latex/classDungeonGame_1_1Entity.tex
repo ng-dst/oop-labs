@@ -1,0 +1,148 @@
+\hypertarget{classDungeonGame_1_1Entity}{}\doxysection{Dungeon\+Game\+::Entity Class Reference}
+\label{classDungeonGame_1_1Entity}\index{DungeonGame::Entity@{DungeonGame::Entity}}
+Inheritance diagram for Dungeon\+Game\+::Entity\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classDungeonGame_1_1Entity}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDungeonGame_1_1Entity_a86540d8bc7717f370dde3d98832e1b79}\label{classDungeonGame_1_1Entity_a86540d8bc7717f370dde3d98832e1b79}} 
+std\+::pair$<$ uint, uint $>$ {\bfseries get\+Pos} () const
+\item 
+\mbox{\Hypertarget{classDungeonGame_1_1Entity_a58cb8a7cc36c0e2a704eaece9d209431}\label{classDungeonGame_1_1Entity_a58cb8a7cc36c0e2a704eaece9d209431}} 
+void {\bfseries set\+Pos} (std\+::pair$<$ uint, uint $>$ \mbox{\hyperlink{classDungeonGame_1_1Entity_af85f8ce5837120c05315da0feead0af9}{pos}})
+\item 
+\mbox{\Hypertarget{classDungeonGame_1_1Entity_a839568b5e558ac3e473f4ab2eefc0b9e}\label{classDungeonGame_1_1Entity_a839568b5e558ac3e473f4ab2eefc0b9e}} 
+void {\bfseries set\+Pos} (uint x, uint y)
+\item 
+\mbox{\Hypertarget{classDungeonGame_1_1Entity_a561516fd9bb0881d049841d2f88ecd13}\label{classDungeonGame_1_1Entity_a561516fd9bb0881d049841d2f88ecd13}} 
+Direction {\bfseries get\+Facing} () const
+\item 
+\mbox{\Hypertarget{classDungeonGame_1_1Entity_a42ed62c9111ce17cedcd4b70acda0371}\label{classDungeonGame_1_1Entity_a42ed62c9111ce17cedcd4b70acda0371}} 
+void {\bfseries set\+Facing} (Direction dir)
+\item 
+\mbox{\Hypertarget{classDungeonGame_1_1Entity_a332bb6c81f67ae110260f203e0f83581}\label{classDungeonGame_1_1Entity_a332bb6c81f67ae110260f203e0f83581}} 
+void {\bfseries set\+Facing} (char dir)
+\item 
+\mbox{\Hypertarget{classDungeonGame_1_1Entity_a7303bae80722dcf8151951df491f094b}\label{classDungeonGame_1_1Entity_a7303bae80722dcf8151951df491f094b}} 
+uint {\bfseries get\+Atk} () const
+\item 
+\mbox{\Hypertarget{classDungeonGame_1_1Entity_a0125a799770d1856be8e597813a9e3f8}\label{classDungeonGame_1_1Entity_a0125a799770d1856be8e597813a9e3f8}} 
+void {\bfseries set\+Atk} (uint \mbox{\hyperlink{classDungeonGame_1_1Entity_a05db6a6f05ea86d36fe843366720d82d}{atk}})
+\item 
+\mbox{\Hypertarget{classDungeonGame_1_1Entity_a91ed9f61d88da7bb5d59a701b28b89ef}\label{classDungeonGame_1_1Entity_a91ed9f61d88da7bb5d59a701b28b89ef}} 
+uint {\bfseries get\+Hp} () const
+\item 
+\mbox{\Hypertarget{classDungeonGame_1_1Entity_af442be188b423c7d0a31f87e7756cbdf}\label{classDungeonGame_1_1Entity_af442be188b423c7d0a31f87e7756cbdf}} 
+void {\bfseries set\+Hp} (uint hp)
+\item 
+\mbox{\Hypertarget{classDungeonGame_1_1Entity_a7e939f7e44c29763df8bdd8584bd5dfc}\label{classDungeonGame_1_1Entity_a7e939f7e44c29763df8bdd8584bd5dfc}} 
+uint {\bfseries get\+Max\+Hp} () const
+\item 
+\mbox{\Hypertarget{classDungeonGame_1_1Entity_ad31a8acb3088917c75b5c93a9380a72d}\label{classDungeonGame_1_1Entity_ad31a8acb3088917c75b5c93a9380a72d}} 
+void {\bfseries set\+Max\+Hp} (uint hp)
+\item 
+\mbox{\Hypertarget{classDungeonGame_1_1Entity_a6e4b16a28dff34649f0805236f1ebfc3}\label{classDungeonGame_1_1Entity_a6e4b16a28dff34649f0805236f1ebfc3}} 
+Fraction {\bfseries get\+Fraction} () const
+\item 
+\mbox{\Hypertarget{classDungeonGame_1_1Entity_a8c911d8fcf7a5e63a79914d7c6db1ae2}\label{classDungeonGame_1_1Entity_a8c911d8fcf7a5e63a79914d7c6db1ae2}} 
+void {\bfseries set\+Fraction} (Fraction \mbox{\hyperlink{classDungeonGame_1_1Entity_ab3a36cd160e445452640c64c98933b50}{fraction}})
+\item 
+virtual void \mbox{\hyperlink{classDungeonGame_1_1Entity_ad22f0b8b76527bb7bbc02254a5a62cd7}{damage}} (uint dmg)
+\item 
+virtual Entity\+Type \mbox{\hyperlink{classDungeonGame_1_1Entity_aa723f2b43f4bb9a6079b23f312b3221c}{get\+Type}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::pair$<$ uint, uint $>$ \mbox{\hyperlink{classDungeonGame_1_1Entity_af85f8ce5837120c05315da0feead0af9}{pos}}
+\item 
+Direction \mbox{\hyperlink{classDungeonGame_1_1Entity_a10c4e59b7cbdf18ad72a593131f7de9b}{facing}}
+\item 
+uint \mbox{\hyperlink{classDungeonGame_1_1Entity_a6997471c3c354ebc4bc9992443b14a4f}{max\+\_\+hp}}
+\item 
+uint \mbox{\hyperlink{classDungeonGame_1_1Entity_ac1a834dac263e1cc4786daf8bf076140}{cur\+\_\+hp}}
+\item 
+uint \mbox{\hyperlink{classDungeonGame_1_1Entity_a05db6a6f05ea86d36fe843366720d82d}{atk}}
+\item 
+Fraction \mbox{\hyperlink{classDungeonGame_1_1Entity_ab3a36cd160e445452640c64c98933b50}{fraction}}
+\item 
+\mbox{\Hypertarget{classDungeonGame_1_1Entity_a946ec2639b057f2a0dd6476ba4b4896b}\label{classDungeonGame_1_1Entity_a946ec2639b057f2a0dd6476ba4b4896b}} 
+Entity\+Type {\bfseries type}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDungeonGame_1_1Entity_ad22f0b8b76527bb7bbc02254a5a62cd7}\label{classDungeonGame_1_1Entity_ad22f0b8b76527bb7bbc02254a5a62cd7}} 
+\index{DungeonGame::Entity@{DungeonGame::Entity}!damage@{damage}}
+\index{damage@{damage}!DungeonGame::Entity@{DungeonGame::Entity}}
+\doxysubsubsection{\texorpdfstring{damage()}{damage()}}
+{\footnotesize\ttfamily void Dungeon\+Game\+::\+Entity\+::damage (\begin{DoxyParamCaption}\item[{uint}]{dmg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classDungeonGame_1_1Golem_ad22e77e21d15d75b5d7c01bde6977de1}{Dungeon\+Game\+::\+Golem}}.
+
+\mbox{\Hypertarget{classDungeonGame_1_1Entity_aa723f2b43f4bb9a6079b23f312b3221c}\label{classDungeonGame_1_1Entity_aa723f2b43f4bb9a6079b23f312b3221c}} 
+\index{DungeonGame::Entity@{DungeonGame::Entity}!getType@{getType}}
+\index{getType@{getType}!DungeonGame::Entity@{DungeonGame::Entity}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily Entity\+Type Dungeon\+Game\+::\+Entity\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+virtual method to \textquotesingle{}know what class is it\textquotesingle{} -\/ useful when working with abstract \mbox{\hyperlink{classDungeonGame_1_1Entity}{Entity}} pointers
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classDungeonGame_1_1Entity}{Entity}} Type of current entity 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classDungeonGame_1_1Golem_adaa5dc441cbe23e970160e8ee7b77320}{Dungeon\+Game\+::\+Golem}}, \mbox{\hyperlink{classDungeonGame_1_1Mortal_ac0cea16b241c52d4ce001c141b7b0e50}{Dungeon\+Game\+::\+Mortal}}, \mbox{\hyperlink{classDungeonGame_1_1Undead_a00cbcf4b72c88ce6488cfa9fe90c228d}{Dungeon\+Game\+::\+Undead}}, and \mbox{\hyperlink{classDungeonGame_1_1Player_a61fa3bbe480f90efb3dbace8d7cc4882}{Dungeon\+Game\+::\+Player}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classDungeonGame_1_1Entity_a05db6a6f05ea86d36fe843366720d82d}\label{classDungeonGame_1_1Entity_a05db6a6f05ea86d36fe843366720d82d}} 
+\index{DungeonGame::Entity@{DungeonGame::Entity}!atk@{atk}}
+\index{atk@{atk}!DungeonGame::Entity@{DungeonGame::Entity}}
+\doxysubsubsection{\texorpdfstring{atk}{atk}}
+{\footnotesize\ttfamily uint Dungeon\+Game\+::\+Entity\+::atk\hspace{0.3cm}{\ttfamily [protected]}}
+
+damage dealt by entity\textquotesingle{}s normal attack \mbox{\Hypertarget{classDungeonGame_1_1Entity_ac1a834dac263e1cc4786daf8bf076140}\label{classDungeonGame_1_1Entity_ac1a834dac263e1cc4786daf8bf076140}} 
+\index{DungeonGame::Entity@{DungeonGame::Entity}!cur\_hp@{cur\_hp}}
+\index{cur\_hp@{cur\_hp}!DungeonGame::Entity@{DungeonGame::Entity}}
+\doxysubsubsection{\texorpdfstring{cur\_hp}{cur\_hp}}
+{\footnotesize\ttfamily uint Dungeon\+Game\+::\+Entity\+::cur\+\_\+hp\hspace{0.3cm}{\ttfamily [protected]}}
+
+current HP \mbox{\Hypertarget{classDungeonGame_1_1Entity_a10c4e59b7cbdf18ad72a593131f7de9b}\label{classDungeonGame_1_1Entity_a10c4e59b7cbdf18ad72a593131f7de9b}} 
+\index{DungeonGame::Entity@{DungeonGame::Entity}!facing@{facing}}
+\index{facing@{facing}!DungeonGame::Entity@{DungeonGame::Entity}}
+\doxysubsubsection{\texorpdfstring{facing}{facing}}
+{\footnotesize\ttfamily Direction Dungeon\+Game\+::\+Entity\+::facing\hspace{0.3cm}{\ttfamily [protected]}}
+
+side where the entity is looking \mbox{\Hypertarget{classDungeonGame_1_1Entity_ab3a36cd160e445452640c64c98933b50}\label{classDungeonGame_1_1Entity_ab3a36cd160e445452640c64c98933b50}} 
+\index{DungeonGame::Entity@{DungeonGame::Entity}!fraction@{fraction}}
+\index{fraction@{fraction}!DungeonGame::Entity@{DungeonGame::Entity}}
+\doxysubsubsection{\texorpdfstring{fraction}{fraction}}
+{\footnotesize\ttfamily Fraction Dungeon\+Game\+::\+Entity\+::fraction\hspace{0.3cm}{\ttfamily [protected]}}
+
+which fraction entity belongs to \mbox{\Hypertarget{classDungeonGame_1_1Entity_a6997471c3c354ebc4bc9992443b14a4f}\label{classDungeonGame_1_1Entity_a6997471c3c354ebc4bc9992443b14a4f}} 
+\index{DungeonGame::Entity@{DungeonGame::Entity}!max\_hp@{max\_hp}}
+\index{max\_hp@{max\_hp}!DungeonGame::Entity@{DungeonGame::Entity}}
+\doxysubsubsection{\texorpdfstring{max\_hp}{max\_hp}}
+{\footnotesize\ttfamily uint Dungeon\+Game\+::\+Entity\+::max\+\_\+hp\hspace{0.3cm}{\ttfamily [protected]}}
+
+max HP \mbox{\Hypertarget{classDungeonGame_1_1Entity_af85f8ce5837120c05315da0feead0af9}\label{classDungeonGame_1_1Entity_af85f8ce5837120c05315da0feead0af9}} 
+\index{DungeonGame::Entity@{DungeonGame::Entity}!pos@{pos}}
+\index{pos@{pos}!DungeonGame::Entity@{DungeonGame::Entity}}
+\doxysubsubsection{\texorpdfstring{pos}{pos}}
+{\footnotesize\ttfamily std\+::pair$<$uint, uint$>$ Dungeon\+Game\+::\+Entity\+::pos\hspace{0.3cm}{\ttfamily [protected]}}
+
+Base abstract class for player and mobs. Introduces very basic params for all entities. position on level, algebraic coordinate system 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/game/\mbox{\hyperlink{Entity_8h}{Entity.\+h}}\item 
+src/game/Entity.\+cpp\end{DoxyCompactItemize}

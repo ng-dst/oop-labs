@@ -1,0 +1,51 @@
+\hypertarget{RangeCalc_8h_source}{}\doxysection{Range\+Calc.\+h}
+\label{RangeCalc_8h_source}\index{src/game/RangeCalc.h@{src/game/RangeCalc.h}}
+\mbox{\hyperlink{RangeCalc_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#ifndef OOP\_RANGECALC\_H}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#define OOP\_RANGECALC\_H}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <queue>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{Level_8h}{Level.h}}"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{Direction_8h}{enum/Direction.h}}"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{keyword}{namespace }DungeonGame \{}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{25     \textcolor{keyword}{class }\mbox{\hyperlink{classDungeonGame_1_1RangeCalc}{RangeCalc}} \{}
+\DoxyCodeLine{26         vector<vector<Cell>>\& field;}
+\DoxyCodeLine{27         vector<vector<uint>> range\_table;}
+\DoxyCodeLine{28         queue<pair<uint, uint>> marked;}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30     \textcolor{keyword}{public}:}
+\DoxyCodeLine{31         \textcolor{keyword}{explicit} \mbox{\hyperlink{classDungeonGame_1_1RangeCalc}{RangeCalc}}(vector<vector<Cell>>\& map): field(map) \{}
+\DoxyCodeLine{32             range\_table.reserve(field.size());}
+\DoxyCodeLine{33             \textcolor{keywordflow}{for} (uint i = 0; i < field.size(); i++)}
+\DoxyCodeLine{34                 range\_table.emplace\_back(field[0].size(), UINT32\_MAX);}
+\DoxyCodeLine{35         \}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37         \textcolor{keywordtype}{int} range(pair<int, int> pos1,}
+\DoxyCodeLine{38                   pair<int, int> pos2,}
+\DoxyCodeLine{39                   \textcolor{keywordtype}{bool} directed = \textcolor{keyword}{false},}
+\DoxyCodeLine{40                   Direction facing = Direction::DOWN);}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42         list<Direction> path(pair<int, int> pos1,}
+\DoxyCodeLine{43                              pair<int, int> pos2,}
+\DoxyCodeLine{44                              uint min\_range,}
+\DoxyCodeLine{45                              uint max\_range);}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47     \textcolor{keyword}{private}:}
+\DoxyCodeLine{48         \textcolor{keywordtype}{void} \_resetRangeTable();}
+\DoxyCodeLine{49         \textcolor{keywordtype}{bool} \_canGoToCell(\textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y);}
+\DoxyCodeLine{50     \};}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 \}}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//OOP\_RANGECALC\_H}}
+
+\end{DoxyCode}

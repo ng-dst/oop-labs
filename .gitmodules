@@ -1,0 +1,3 @@
+[submodule "lab4/src/lib/simpleini"]
+	path = lab4/src/lib/simpleini
+	url = https://github.com/brofield/simpleini

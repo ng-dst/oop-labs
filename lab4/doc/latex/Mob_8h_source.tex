@@ -1,0 +1,47 @@
+\hypertarget{Mob_8h_source}{}\doxysection{Mob.\+h}
+\label{Mob_8h_source}\index{src/game/Mob.h@{src/game/Mob.h}}
+\mbox{\hyperlink{Mob_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#ifndef OOP\_MOB\_H}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#define OOP\_MOB\_H}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{Entity_8h}{Entity.h}}"{}}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{UndeadType_8h}{enum/UndeadType.h}}"{}}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{keyword}{namespace }DungeonGame \{}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{17     \textcolor{keyword}{class }\mbox{\hyperlink{classDungeonGame_1_1Mob}{Mob}}: \textcolor{keyword}{public} \mbox{\hyperlink{classDungeonGame_1_1Entity}{Entity}} \{}
+\DoxyCodeLine{18     \textcolor{keyword}{protected}:}
+\DoxyCodeLine{19         \textcolor{keywordtype}{bool} \mbox{\hyperlink{classDungeonGame_1_1Mob_ab4a01b2c76c97e70999c8865adb6225e}{is\_spawner}}; }
+\DoxyCodeLine{20         UndeadType \mbox{\hyperlink{classDungeonGame_1_1Mob_a2e12620c24ac38a28079322fb0b02061}{spawn\_type}}; }
+\DoxyCodeLine{21         std::string \mbox{\hyperlink{classDungeonGame_1_1Mob_aeac7e5875b067fb8731a05a0171a7306}{name}}; }
+\DoxyCodeLine{22         uint \mbox{\hyperlink{classDungeonGame_1_1Mob_ab142ff151a4d8c8409fcb942280474e1}{atk\_range}}; }
+\DoxyCodeLine{23         uint \mbox{\hyperlink{classDungeonGame_1_1Mob_a11c8d4b02f844e9cb2eb1916f6f5a6b0}{vis\_range}}; }
+\DoxyCodeLine{24         uint \mbox{\hyperlink{classDungeonGame_1_1Mob_a3db7b49a1567744c841e36f6d18a331d}{speed}}; }
+\DoxyCodeLine{26     \textcolor{keyword}{public}:}
+\DoxyCodeLine{27         [[nodiscard]] \textcolor{keywordtype}{bool} isSpawner() \textcolor{keyword}{const};}
+\DoxyCodeLine{28         \textcolor{keywordtype}{void} setSpawner(\textcolor{keywordtype}{bool} spawner);}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30         [[nodiscard]] UndeadType getSpawnType() \textcolor{keyword}{const};}
+\DoxyCodeLine{31         \textcolor{keywordtype}{void} setSpawnType(UndeadType undead\_type);}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33         [[nodiscard]] uint getAtkRange() \textcolor{keyword}{const};}
+\DoxyCodeLine{34         \textcolor{keywordtype}{void} setAtkRange(uint range);}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36         [[nodiscard]] uint getVisRange() \textcolor{keyword}{const};}
+\DoxyCodeLine{37         \textcolor{keywordtype}{void} setVisRange(uint range);}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39         [[nodiscard]] \textcolor{keyword}{const} std::string\& getName() \textcolor{keyword}{const};}
+\DoxyCodeLine{40         \textcolor{keywordtype}{void} setName(\textcolor{keyword}{const} std::string\& \mbox{\hyperlink{classDungeonGame_1_1Mob_aeac7e5875b067fb8731a05a0171a7306}{name}});}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42         [[nodiscard]] uint getSpeed() \textcolor{keyword}{const};}
+\DoxyCodeLine{43         \textcolor{keywordtype}{void} setSpeed(uint \mbox{\hyperlink{classDungeonGame_1_1Mob_a3db7b49a1567744c841e36f6d18a331d}{speed}});}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45     \};}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 \}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//OOP\_MOB\_H}}
+
+\end{DoxyCode}

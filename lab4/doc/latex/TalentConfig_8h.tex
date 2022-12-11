@@ -1,0 +1,38 @@
+\hypertarget{TalentConfig_8h}{}\doxysection{src/game/\+Talent\+Config.h File Reference}
+\label{TalentConfig_8h}\index{src/game/TalentConfig.h@{src/game/TalentConfig.h}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include \char`\"{}enum/\+Undead\+Type.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../lib/simpleini/\+Simple\+Ini.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structDungeonGame_1_1TalentConfig}{Dungeon\+Game\+::\+Talent\+Config}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Talent\+Config \& \mbox{\hyperlink{TalentConfig_8cpp_a857e9d8124deb53a8bb5383cb4f59396}{Dungeon\+Game\+::load\+Talent\+Config}} (CSimple\+IniA \&ini)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Struct with numeric constants defining player\textquotesingle{}s Talents behavior. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{TalentConfig_8cpp_a857e9d8124deb53a8bb5383cb4f59396}\label{TalentConfig_8cpp_a857e9d8124deb53a8bb5383cb4f59396}} 
+\index{TalentConfig.h@{TalentConfig.h}!loadTalentConfig@{loadTalentConfig}}
+\index{loadTalentConfig@{loadTalentConfig}!TalentConfig.h@{TalentConfig.h}}
+\doxysubsubsection{\texorpdfstring{loadTalentConfig()}{loadTalentConfig()}}
+{\footnotesize\ttfamily Talent\+Config \& Dungeon\+Game\+::load\+Talent\+Config (\begin{DoxyParamCaption}\item[{CSimple\+IniA \&}]{ini }\end{DoxyParamCaption})}
+
+load config from CSimple\+Ini object of world config file
+
+
+\begin{DoxyParams}{Parameters}
+{\em ini} & -\/ CSimple\+Ini from world config file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to newly loaded talent config 
+\end{DoxyReturn}

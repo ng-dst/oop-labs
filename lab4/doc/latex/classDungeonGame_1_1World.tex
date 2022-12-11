@@ -1,0 +1,178 @@
+\hypertarget{classDungeonGame_1_1World}{}\doxysection{Dungeon\+Game\+::World Class Reference}
+\label{classDungeonGame_1_1World}\index{DungeonGame::World@{DungeonGame::World}}
+
+
+{\ttfamily \#include $<$World.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDungeonGame_1_1World_a35f66a58f79d1715b5a93b19461c35f0}\label{classDungeonGame_1_1World_a35f66a58f79d1715b5a93b19461c35f0}} 
+{\bfseries World} (string level\+\_\+dir, string save\+\_\+path, uint level\+\_\+count, \mbox{\hyperlink{classDungeonGame_1_1Level}{Level}} \&first\+\_\+lvl, \mbox{\hyperlink{classDungeonGame_1_1Player}{Player}} \&player)
+\item 
+int \mbox{\hyperlink{classDungeonGame_1_1World_ad7563d8dabf0df30195b86978c0d7e6e}{load\+Player\+Data}} ()
+\item 
+\mbox{\Hypertarget{classDungeonGame_1_1World_a72319c65cc96fe91764ad404efb32e3e}\label{classDungeonGame_1_1World_a72319c65cc96fe91764ad404efb32e3e}} 
+int {\bfseries save\+Player\+Data} ()
+\item 
+\mbox{\Hypertarget{classDungeonGame_1_1World_a9a0967ce38cbad4b29c0d457a0fd70d1}\label{classDungeonGame_1_1World_a9a0967ce38cbad4b29c0d457a0fd70d1}} 
+const string \& {\bfseries get\+Level\+Dir} () const
+\item 
+\mbox{\Hypertarget{classDungeonGame_1_1World_ae9172c701d524cb7c41d6093ca85de97}\label{classDungeonGame_1_1World_ae9172c701d524cb7c41d6093ca85de97}} 
+void {\bfseries set\+Level\+Dir} (const string \&dir)
+\item 
+\mbox{\Hypertarget{classDungeonGame_1_1World_a1dea9a1db032599ed208cd1bb667d6f6}\label{classDungeonGame_1_1World_a1dea9a1db032599ed208cd1bb667d6f6}} 
+const string \& {\bfseries get\+Save\+Path} () const
+\item 
+\mbox{\Hypertarget{classDungeonGame_1_1World_a9731b2654eed6bc9556e6b71d39afca4}\label{classDungeonGame_1_1World_a9731b2654eed6bc9556e6b71d39afca4}} 
+void {\bfseries set\+Save\+Path} (const string \&save\+\_\+path)
+\item 
+\mbox{\Hypertarget{classDungeonGame_1_1World_a5d47f45aa06e21f4491a501ddf776d56}\label{classDungeonGame_1_1World_a5d47f45aa06e21f4491a501ddf776d56}} 
+uint {\bfseries get\+Level\+Count} () const
+\item 
+\mbox{\Hypertarget{classDungeonGame_1_1World_a55a6848f2e3bc60ebe92063f78ff920e}\label{classDungeonGame_1_1World_a55a6848f2e3bc60ebe92063f78ff920e}} 
+void {\bfseries set\+Level\+Count} (uint level\+\_\+count)
+\item 
+\mbox{\Hypertarget{classDungeonGame_1_1World_a2e9a36b000fc3dc9ffd7294fa5d74a98}\label{classDungeonGame_1_1World_a2e9a36b000fc3dc9ffd7294fa5d74a98}} 
+\mbox{\hyperlink{classDungeonGame_1_1Player}{Player}} \& {\bfseries get\+Player\+Ent} ()
+\item 
+void \mbox{\hyperlink{classDungeonGame_1_1World_a406537a9fb4c1abb04e4af66a3511875}{load\+Level}} (uint level\+\_\+number)
+\item 
+\mbox{\Hypertarget{classDungeonGame_1_1World_ae5c5dc0bdfb1c6cebf912a87f774fb54}\label{classDungeonGame_1_1World_ae5c5dc0bdfb1c6cebf912a87f774fb54}} 
+\mbox{\hyperlink{classDungeonGame_1_1Level}{Level}} \& {\bfseries get\+Current\+Level} ()
+\item 
+bool \mbox{\hyperlink{classDungeonGame_1_1World_a2c3d19ce4b04b17c00fb6482072545c1}{move\+Player}} (char key)
+\item 
+void \mbox{\hyperlink{classDungeonGame_1_1World_a542a18a59609b62c6469294e41c08109}{move\+One\+Mob}} (\mbox{\hyperlink{classDungeonGame_1_1Mob}{Mob}} \&moving\+\_\+mob)
+\item 
+void \mbox{\hyperlink{classDungeonGame_1_1World_ac4e2639540a1344180e50a4576328ab0}{move\+Mobs}} ()
+\item 
+void \mbox{\hyperlink{classDungeonGame_1_1World_a37faaeef94c994e485c02f4261f77676}{process\+Dead}} ()
+\item 
+void \mbox{\hyperlink{classDungeonGame_1_1World_a7fd5de38441f2943c72aa7988fb4374a}{do\+Spawn\+Cycle}} ()
+\item 
+\mbox{\Hypertarget{classDungeonGame_1_1World_aa74c6c320ed6bbfcb70a6e5ba2d97685}\label{classDungeonGame_1_1World_aa74c6c320ed6bbfcb70a6e5ba2d97685}} 
+bool {\bfseries is\+Game\+Running} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classDungeonGame_1_1World}{World}} \& \mbox{\hyperlink{classDungeonGame_1_1World_ab22de42236f07c57772769450f1fe474}{from\+Dir}} (const string \&dir, uint save\+\_\+number=0)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Main game manager class. Provides API for interaction with game process, level loading, progress data saving, etc.
+
+\mbox{\hyperlink{classDungeonGame_1_1World}{World}} is loaded from config file\+: world\+\_\+dir/config.\+ini Levels are loaded from\+: world\+\_\+dir/level\+X.\+ini , world\+\_\+dir/level\+X\+\_\+map.\+txt (X counts from 0) Progress data is saved to / loaded from\+: world\+\_\+dir/save\+N.\+ini (N counts from 0) 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDungeonGame_1_1World_a7fd5de38441f2943c72aa7988fb4374a}\label{classDungeonGame_1_1World_a7fd5de38441f2943c72aa7988fb4374a}} 
+\index{DungeonGame::World@{DungeonGame::World}!doSpawnCycle@{doSpawnCycle}}
+\index{doSpawnCycle@{doSpawnCycle}!DungeonGame::World@{DungeonGame::World}}
+\doxysubsubsection{\texorpdfstring{doSpawnCycle()}{doSpawnCycle()}}
+{\footnotesize\ttfamily void Dungeon\+Game\+::\+World\+::do\+Spawn\+Cycle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+process all active mobs-\/spawners on the level, and for each of them try to spawn a new mob \mbox{\Hypertarget{classDungeonGame_1_1World_ab22de42236f07c57772769450f1fe474}\label{classDungeonGame_1_1World_ab22de42236f07c57772769450f1fe474}} 
+\index{DungeonGame::World@{DungeonGame::World}!fromDir@{fromDir}}
+\index{fromDir@{fromDir}!DungeonGame::World@{DungeonGame::World}}
+\doxysubsubsection{\texorpdfstring{fromDir()}{fromDir()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDungeonGame_1_1World}{World}} \& Dungeon\+Game\+::\+World\+::from\+Dir (\begin{DoxyParamCaption}\item[{const string \&}]{dir,  }\item[{uint}]{save\+\_\+number = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+load \mbox{\hyperlink{classDungeonGame_1_1World}{World}} from its directory, and try to load progress data, if present
+
+
+\begin{DoxyParams}{Parameters}
+{\em dir} & -\/ world directory with config.\+ini, level\+X.\+ini, level\+X\+\_\+map.\+txt \\
+\hline
+{\em save\+\_\+number} & -\/ number of save slot, resulting in file save\+N.\+ini \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to \mbox{\hyperlink{classDungeonGame_1_1World}{World}} loaded
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::length\+\_\+error} & -\/ if dir name is too long (\texorpdfstring{$>$}{>} 250) \\
+\hline
+{\em std\+::runtime\+\_\+error} & -\/ if Simple\+Ini cannot load level config \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classDungeonGame_1_1World_a406537a9fb4c1abb04e4af66a3511875}\label{classDungeonGame_1_1World_a406537a9fb4c1abb04e4af66a3511875}} 
+\index{DungeonGame::World@{DungeonGame::World}!loadLevel@{loadLevel}}
+\index{loadLevel@{loadLevel}!DungeonGame::World@{DungeonGame::World}}
+\doxysubsubsection{\texorpdfstring{loadLevel()}{loadLevel()}}
+{\footnotesize\ttfamily void Dungeon\+Game\+::\+World\+::load\+Level (\begin{DoxyParamCaption}\item[{uint}]{level\+\_\+number }\end{DoxyParamCaption})}
+
+load level by number from world directory, place to current\+\_\+level
+
+
+\begin{DoxyParams}{Parameters}
+{\em level\+\_\+number} & -\/ number of level to load, counting from 0\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error,if} & Simple\+Ini cannot load level \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classDungeonGame_1_1World_ad7563d8dabf0df30195b86978c0d7e6e}\label{classDungeonGame_1_1World_ad7563d8dabf0df30195b86978c0d7e6e}} 
+\index{DungeonGame::World@{DungeonGame::World}!loadPlayerData@{loadPlayerData}}
+\index{loadPlayerData@{loadPlayerData}!DungeonGame::World@{DungeonGame::World}}
+\doxysubsubsection{\texorpdfstring{loadPlayerData()}{loadPlayerData()}}
+{\footnotesize\ttfamily int Dungeon\+Game\+::\+World\+::load\+Player\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+try to load / save player data from current save path
+
+\begin{DoxyReturn}{Returns}
+EXIT\+\_\+\+SUCCESS or EXIT\+\_\+\+FAILURE 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDungeonGame_1_1World_ac4e2639540a1344180e50a4576328ab0}\label{classDungeonGame_1_1World_ac4e2639540a1344180e50a4576328ab0}} 
+\index{DungeonGame::World@{DungeonGame::World}!moveMobs@{moveMobs}}
+\index{moveMobs@{moveMobs}!DungeonGame::World@{DungeonGame::World}}
+\doxysubsubsection{\texorpdfstring{moveMobs()}{moveMobs()}}
+{\footnotesize\ttfamily void Dungeon\+Game\+::\+World\+::move\+Mobs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+move all AI-\/controlled mobs on the level
+
+Mobs move consequently by fractions. \mbox{\hyperlink{classDungeonGame_1_1Player}{Player}}\textquotesingle{}s allies move first. \mbox{\Hypertarget{classDungeonGame_1_1World_a542a18a59609b62c6469294e41c08109}\label{classDungeonGame_1_1World_a542a18a59609b62c6469294e41c08109}} 
+\index{DungeonGame::World@{DungeonGame::World}!moveOneMob@{moveOneMob}}
+\index{moveOneMob@{moveOneMob}!DungeonGame::World@{DungeonGame::World}}
+\doxysubsubsection{\texorpdfstring{moveOneMob()}{moveOneMob()}}
+{\footnotesize\ttfamily void Dungeon\+Game\+::\+World\+::move\+One\+Mob (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDungeonGame_1_1Mob}{Mob}} \&}]{moving\+\_\+mob }\end{DoxyParamCaption})}
+
+move specified AI-\/controlled mob
+
+
+\begin{DoxyParams}{Parameters}
+{\em moving\+\_\+mob} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDungeonGame_1_1World_a2c3d19ce4b04b17c00fb6482072545c1}\label{classDungeonGame_1_1World_a2c3d19ce4b04b17c00fb6482072545c1}} 
+\index{DungeonGame::World@{DungeonGame::World}!movePlayer@{movePlayer}}
+\index{movePlayer@{movePlayer}!DungeonGame::World@{DungeonGame::World}}
+\doxysubsubsection{\texorpdfstring{movePlayer()}{movePlayer()}}
+{\footnotesize\ttfamily bool Dungeon\+Game\+::\+World\+::move\+Player (\begin{DoxyParamCaption}\item[{char}]{key }\end{DoxyParamCaption})}
+
+process pressed key from keyboard to make respective move
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true / false, whether player has actually moved (i.\+e. spent his turn) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDungeonGame_1_1World_a37faaeef94c994e485c02f4261f77676}\label{classDungeonGame_1_1World_a37faaeef94c994e485c02f4261f77676}} 
+\index{DungeonGame::World@{DungeonGame::World}!processDead@{processDead}}
+\index{processDead@{processDead}!DungeonGame::World@{DungeonGame::World}}
+\doxysubsubsection{\texorpdfstring{processDead()}{processDead()}}
+{\footnotesize\ttfamily void Dungeon\+Game\+::\+World\+::process\+Dead (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+process all dead bodies on the level\+: give player hp / mana, trigger golems\textquotesingle{} death effects, etc. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/game/\mbox{\hyperlink{World_8h}{World.\+h}}\item 
+src/game/World.\+cpp\end{DoxyCompactItemize}

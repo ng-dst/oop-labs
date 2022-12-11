@@ -32,6 +32,7 @@ namespace Lab3 {
         void update(int key, const char* info);
 
         OrderedTable& operator = (const OrderedTable& t);
+        OrderedTable& operator = (OrderedTable&& t) noexcept;
         OrderedTable operator + (const OrderedTable& t);
         OrderedTable& operator += (const OrderedTable& t);
 

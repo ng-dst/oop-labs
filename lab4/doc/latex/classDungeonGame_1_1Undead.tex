@@ -1,0 +1,59 @@
+\hypertarget{classDungeonGame_1_1Undead}{}\doxysection{Dungeon\+Game\+::Undead Class Reference}
+\label{classDungeonGame_1_1Undead}\index{DungeonGame::Undead@{DungeonGame::Undead}}
+
+
+{\ttfamily \#include $<$Undead.\+h$>$}
+
+Inheritance diagram for Dungeon\+Game\+::Undead\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classDungeonGame_1_1Undead}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDungeonGame_1_1Undead_a220a98b045f9d1d06da640fe3bbae2dc}\label{classDungeonGame_1_1Undead_a220a98b045f9d1d06da640fe3bbae2dc}} 
+{\bfseries Undead} (std\+::pair$<$ uint, uint $>$ \mbox{\hyperlink{classDungeonGame_1_1Entity_af85f8ce5837120c05315da0feead0af9}{pos}}, uint \mbox{\hyperlink{classDungeonGame_1_1Entity_a6997471c3c354ebc4bc9992443b14a4f}{max\+\_\+hp}}, uint \mbox{\hyperlink{classDungeonGame_1_1Entity_a05db6a6f05ea86d36fe843366720d82d}{atk}}, float \mbox{\hyperlink{classDungeonGame_1_1Mob_ab142ff151a4d8c8409fcb942280474e1}{atk\+\_\+range}}, float \mbox{\hyperlink{classDungeonGame_1_1Mob_a11c8d4b02f844e9cb2eb1916f6f5a6b0}{vis\+\_\+range}}, int \mbox{\hyperlink{classDungeonGame_1_1Mob_a3db7b49a1567744c841e36f6d18a331d}{speed}}, Fraction \mbox{\hyperlink{classDungeonGame_1_1Entity_ab3a36cd160e445452640c64c98933b50}{fraction}}, const std\+::string \&\mbox{\hyperlink{classDungeonGame_1_1Mob_aeac7e5875b067fb8731a05a0171a7306}{name}}, Undead\+Type type, bool \mbox{\hyperlink{classDungeonGame_1_1Mob_ab4a01b2c76c97e70999c8865adb6225e}{is\+\_\+spawner}}=false, Undead\+Type \mbox{\hyperlink{classDungeonGame_1_1Mob_a2e12620c24ac38a28079322fb0b02061}{spawn\+\_\+type}}=ZOMBIE)
+\item 
+\mbox{\Hypertarget{classDungeonGame_1_1Undead_ad06c7889f828145ef4e5bd55cda89398}\label{classDungeonGame_1_1Undead_ad06c7889f828145ef4e5bd55cda89398}} 
+{\bfseries Undead} (const \mbox{\hyperlink{classDungeonGame_1_1Mortal}{Mortal}} \&body, Undead\+Type new\+\_\+type)
+\item 
+\mbox{\Hypertarget{classDungeonGame_1_1Undead_ad14db5cb2eda5b9b668802f7b0487d55}\label{classDungeonGame_1_1Undead_ad14db5cb2eda5b9b668802f7b0487d55}} 
+Undead\+Type {\bfseries get\+Undead\+Type} () const
+\item 
+\mbox{\Hypertarget{classDungeonGame_1_1Undead_acb64bb710e213c03faa5a8156954d713}\label{classDungeonGame_1_1Undead_acb64bb710e213c03faa5a8156954d713}} 
+void {\bfseries set\+Undead\+Type} (Undead\+Type type)
+\item 
+Entity\+Type \mbox{\hyperlink{classDungeonGame_1_1Undead_a00cbcf4b72c88ce6488cfa9fe90c228d}{get\+Type}} () const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classDungeonGame_1_1Undead}{Undead}} -\/ type of mob
+
+There are 4 types of Undeads, each one has its own parameters. Undeads can be transformed to another \mbox{\hyperlink{classDungeonGame_1_1Undead}{Undead}} type with player\textquotesingle{}s Morphism talent. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDungeonGame_1_1Undead_a00cbcf4b72c88ce6488cfa9fe90c228d}\label{classDungeonGame_1_1Undead_a00cbcf4b72c88ce6488cfa9fe90c228d}} 
+\index{DungeonGame::Undead@{DungeonGame::Undead}!getType@{getType}}
+\index{getType@{getType}!DungeonGame::Undead@{DungeonGame::Undead}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily Entity\+Type Dungeon\+Game\+::\+Undead\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+virtual method to \textquotesingle{}know what class is it\textquotesingle{} -\/ useful when working with abstract \mbox{\hyperlink{classDungeonGame_1_1Entity}{Entity}} pointers
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classDungeonGame_1_1Entity}{Entity}} Type of current entity 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classDungeonGame_1_1Entity_aa723f2b43f4bb9a6079b23f312b3221c}{Dungeon\+Game\+::\+Entity}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/game/mobs/\mbox{\hyperlink{Undead_8h}{Undead.\+h}}\item 
+src/game/mobs/Undead.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,73 @@
+\hypertarget{World_8h_source}{}\doxysection{World.\+h}
+\label{World_8h_source}\index{src/game/World.h@{src/game/World.h}}
+\mbox{\hyperlink{World_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#ifndef OOP\_WORLD\_H}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#define OOP\_WORLD\_H}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <utility>}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{Level_8h}{Level.h}}"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{TalentConfig_8h}{TalentConfig.h}}"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{keyword}{namespace }DungeonGame \{}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{27     \textcolor{keyword}{class }\mbox{\hyperlink{classDungeonGame_1_1World}{World}} \{}
+\DoxyCodeLine{28         \textcolor{keywordtype}{bool} game\_running;}
+\DoxyCodeLine{29         \textcolor{keywordtype}{string} level\_dir;}
+\DoxyCodeLine{30         \textcolor{keywordtype}{string} save\_path;}
+\DoxyCodeLine{31         uint level\_count;}
+\DoxyCodeLine{32         \mbox{\hyperlink{classDungeonGame_1_1Level}{Level}}\& current\_level;}
+\DoxyCodeLine{33         \mbox{\hyperlink{classDungeonGame_1_1Player}{Player}}\& player\_ent;}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35     \textcolor{keyword}{public}:}
+\DoxyCodeLine{36         \mbox{\hyperlink{classDungeonGame_1_1World}{\string~World}}();}
+\DoxyCodeLine{47         \textcolor{keyword}{static} \mbox{\hyperlink{classDungeonGame_1_1World}{World}}\& \mbox{\hyperlink{classDungeonGame_1_1World_ab22de42236f07c57772769450f1fe474}{fromDir}}(\textcolor{keyword}{const} \textcolor{keywordtype}{string}\& dir, uint save\_number=0);}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49         \mbox{\hyperlink{classDungeonGame_1_1World}{World}}(\textcolor{keywordtype}{string}  level\_dir,}
+\DoxyCodeLine{50               \textcolor{keywordtype}{string}  save\_path,}
+\DoxyCodeLine{51               uint level\_count,}
+\DoxyCodeLine{52               \mbox{\hyperlink{classDungeonGame_1_1Level}{Level}}\& first\_lvl,}
+\DoxyCodeLine{53               \mbox{\hyperlink{classDungeonGame_1_1Player}{Player}}\& player):}
+\DoxyCodeLine{54               level\_dir(std::move(level\_dir)), save\_path(std::move(save\_path)),}
+\DoxyCodeLine{55               level\_count(level\_count), current\_level(first\_lvl), player\_ent(player), game\_running(\textcolor{keyword}{true}) \{\};}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{62         \textcolor{keywordtype}{int} \mbox{\hyperlink{classDungeonGame_1_1World_ad7563d8dabf0df30195b86978c0d7e6e}{loadPlayerData}}();}
+\DoxyCodeLine{63         \textcolor{keywordtype}{int} savePlayerData();}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65         [[nodiscard]] \textcolor{keyword}{const} \textcolor{keywordtype}{string}\& getLevelDir() \textcolor{keyword}{const};}
+\DoxyCodeLine{66         \textcolor{keywordtype}{void} setLevelDir(\textcolor{keyword}{const} \textcolor{keywordtype}{string}\& dir);}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68         [[nodiscard]] \textcolor{keyword}{const} \textcolor{keywordtype}{string}\& getSavePath() \textcolor{keyword}{const};}
+\DoxyCodeLine{69         \textcolor{keywordtype}{void} setSavePath(\textcolor{keyword}{const} \textcolor{keywordtype}{string}\& save\_path);}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71         [[nodiscard]] uint getLevelCount() \textcolor{keyword}{const};}
+\DoxyCodeLine{72         \textcolor{keywordtype}{void} setLevelCount(uint level\_count);}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74         \mbox{\hyperlink{classDungeonGame_1_1Player}{Player}}\& getPlayerEnt();}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{83         \textcolor{keywordtype}{void} \mbox{\hyperlink{classDungeonGame_1_1World_a406537a9fb4c1abb04e4af66a3511875}{loadLevel}}(uint level\_number);}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85         \mbox{\hyperlink{classDungeonGame_1_1Level}{Level}}\& getCurrentLevel();}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{93         \textcolor{keywordtype}{bool} \mbox{\hyperlink{classDungeonGame_1_1World_a2c3d19ce4b04b17c00fb6482072545c1}{movePlayer}}(\textcolor{keywordtype}{char} key);}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{100         \textcolor{keywordtype}{void} \mbox{\hyperlink{classDungeonGame_1_1World_a542a18a59609b62c6469294e41c08109}{moveOneMob}}(\mbox{\hyperlink{classDungeonGame_1_1Mob}{Mob}}\& moving\_mob);}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{107         \textcolor{keywordtype}{void} \mbox{\hyperlink{classDungeonGame_1_1World_ac4e2639540a1344180e50a4576328ab0}{moveMobs}}();}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{113         \textcolor{keywordtype}{void} \mbox{\hyperlink{classDungeonGame_1_1World_a37faaeef94c994e485c02f4261f77676}{processDead}}();}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{119         \textcolor{keywordtype}{void} \mbox{\hyperlink{classDungeonGame_1_1World_a7fd5de38441f2943c72aa7988fb4374a}{doSpawnCycle}}();}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121         [[nodiscard]] \textcolor{keywordtype}{bool} isGameRunning() \textcolor{keyword}{const};}
+\DoxyCodeLine{122     \};}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{124 \}}
+\DoxyCodeLine{125 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//OOP\_WORLD\_H}}
+
+\end{DoxyCode}
