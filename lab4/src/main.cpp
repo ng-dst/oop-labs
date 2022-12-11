@@ -225,8 +225,8 @@ int main()
                 }
                 else if (choice == 'r') {
                     // if input R: restart level
-                    w.loadLevel(cur_level);
                     w.loadPlayerData();
+                    w.loadLevel(cur_level);
                     w.getPlayerEnt().setHp(w.getPlayerEnt().getMaxHp());
                     w.getPlayerEnt().setMana(0);
                 }

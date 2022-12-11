@@ -125,7 +125,7 @@ TEST (PlayerLogicTest, PlayerWithering) {
     w.processDead();
 
     ASSERT_EQ((int) (10. + 60*(.2+.05)), p.getHp());
-    ASSERT_EQ(20 + 15+5, p.getMana());
+    ASSERT_EQ(20 + 10+5, p.getMana());
 
     delete &w;
 }

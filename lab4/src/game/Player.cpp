@@ -50,10 +50,10 @@ namespace DungeonGame {
         this->exp %= talent_config.ExpPerLevel;
 
         this->level += dlevel;
+        this->talent_points += dlevel;
         this->atk += dlevel * talent_config.PlayerAtkAffix;
         this->max_hp += dlevel * talent_config.PlayerMaxHpAffix;
         this->max_mana += dlevel * talent_config.PlayerMaxManaAffix;
-        this->talent_points += dlevel;
     }
 
     uint Player::getTalentLevel(Talent talent) const { return talents[talent]; }

@@ -53,7 +53,7 @@ namespace DungeonGame {
 
         // Mobs
 
-        mobs = list<Mob*>();
+        mobs = list_<Mob*>();
 
         for (uint i = 0; i < mobs_count; i++) {
             ostringstream str_section;
@@ -140,7 +140,7 @@ namespace DungeonGame {
     uint Level::getLavaDmg() const { return lava_dmg; }
     float Level::getMoveProb() const { return move_prob; }
 
-    list<Mob*>& Level::getMobList() { return mobs; }
+    list_<Mob*>& Level::getMobList() { return mobs; }
     Mob* Level::getMob(const pair<uint, uint>& coords) {
         for (Mob* i: mobs)
             if (i->getPos() == coords)

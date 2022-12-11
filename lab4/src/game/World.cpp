@@ -141,6 +141,8 @@ namespace DungeonGame {
         for (auto mob: current_level.getMobList())
             delete mob;
         current_level = *new Level(level_dir, level_number, player_ent);
+        player_ent.incExp(0);
+        player_ent.setHp(player_ent.getMaxHp());
         game_running = true;
     }
     Level& World::getCurrentLevel() { return current_level; }
@@ -262,13 +264,13 @@ namespace DungeonGame {
         RangeCalc calc(current_level.getMap());
         uint range;
         // search for enemy
-        list<Entity*> enemy_list;
+        list_<Entity*> enemy_list;
         for (auto i: current_level.getMobList())
             enemy_list.push_back(i);
         enemy_list.push_back((Entity*) &player_ent);
 
         for (auto enemy: enemy_list) {
-            if (enemy->getFraction() != moving_mob.getFraction() &&
+            if (enemy->getFraction() != moving_mob.getFraction() && enemy->getHp() > 0 &&
                 (range = calc.range(moving_mob.getPos(), enemy->getPos())) > 0 && range <= moving_mob.getVisRange()) {
                 // found enemy
                 if (range < moving_mob.getAtkRange())
@@ -302,7 +304,7 @@ namespace DungeonGame {
     }
 
     void World::processDead() {
-        list<pair<uint, uint>> to_rm;
+        list_<pair<uint, uint>> to_rm;
         for (auto mob: current_level.getMobList())
             if (mob->getHp() == 0) {
                 if (mob->getType() == EntityType::MORTAL) {

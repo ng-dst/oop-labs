@@ -6,7 +6,6 @@
 #ifndef OOP_PLAYER_H
 #define OOP_PLAYER_H
 
-#include <list>
 #include <map>
 #include <optional>
 

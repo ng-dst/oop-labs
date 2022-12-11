@@ -7,10 +7,16 @@
 #define OOP_LEVEL_H
 
 #include <iostream>
-#include <optional>
 #include <vector>
-#include <list>
 #include <map>
+
+#ifdef USE_TEMPLATE
+#include "my_list.h"
+#define list_ my_list
+#else
+#include <list>
+#define list_ list
+#endif
 
 #include "mobs/Golem.h"
 #include "mobs/Mortal.h"
@@ -55,7 +61,7 @@ namespace DungeonGame {
     class Level {
         uint level_number; /**< number of current level, 0..N-1 */
         string level_title; /**< title of the level */
-        list<Mob*> mobs; /**< list of pointers to mobs on the current level */
+        list_<Mob*> mobs; /**< list of pointers to mobs on the current level */
         pair<uint, uint> level_size; /**< (height, width) of map */
         vector<vector<Cell>> level_map; /**< level map, represented as 2D vector */
         uint lava_dmg; /**< damage dealt by lava each turn */
@@ -91,7 +97,7 @@ namespace DungeonGame {
 
         [[nodiscard]] float getMoveProb() const;
 
-        list<Mob*>& getMobList();
+        list_<Mob*>& getMobList();
 
         /**
          * get mob by cell coordinates (algebraic system)

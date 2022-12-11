@@ -52,9 +52,9 @@ static const map<DungeonGame::Direction, pair<int, int>> mortal_tile_coords {
 };
 
 static const map<DungeonGame::GolemElementType, pair<int, int>> golem_tile_coords {
-        {DungeonGame::STONE, make_pair(368, 112)},
-        {DungeonGame::FIRE, make_pair(368, 48)},
-        {DungeonGame::ETHER, make_pair(432, 112)},
+        {DungeonGame::STONE, make_pair(384, 112)},
+        {DungeonGame::FIRE, make_pair(384, 48)},
+        {DungeonGame::ETHER, make_pair(448, 112)},
         {DungeonGame::EXPLOSIVE, make_pair(400, 300)}
 };
 

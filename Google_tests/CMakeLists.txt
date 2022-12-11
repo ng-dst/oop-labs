@@ -37,3 +37,4 @@ add_executable(Google_Tests_run_lab4 ../lab4/src/test/TestWorld.cpp ../lab4/src/
         ../lab4/src/test/TestTalentConfig.cpp ../lab4/src/test/TestPlayer.cpp
         ../lab4/src/test/TestMobs.cpp ../lab4/src/test/TestLevel.cpp)
 target_link_libraries(Google_Tests_run_lab4 gtest gtest_main dungeon)
+

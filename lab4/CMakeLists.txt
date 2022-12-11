@@ -14,6 +14,7 @@ include_directories(${SIMPLE_INI_DIR})
 add_library(dungeon ${G_DIR}/Level.cpp ${G_DIR}/RangeCalc.cpp ${G_DIR}/World.cpp ${G_DIR}/TalentConfig.cpp
                              ${G_DIR}/Entity.cpp ${G_DIR}/Player.cpp ${G_DIR}/Mob.cpp
                              ${G_DIR}/mobs/Golem.cpp ${G_DIR}/mobs/Mortal.cpp ${G_DIR}/mobs/Undead.cpp)
+# target_compile_definitions(dungeon PUBLIC -DUSE_TEMPLATE)
 
 add_library(simple-ini ${SIMPLE_INI_DIR}/ConvertUTF.c ${SIMPLE_INI_DIR}/ConvertUTF.h ${SIMPLE_INI_DIR}/SimpleIni.h)
 
