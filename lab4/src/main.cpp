@@ -12,10 +12,10 @@
 
 using namespace DungeonGame;
 
-
-static const string levels_path = "../../lab4/levels";
-static const string tileset_path = "../../lab4/assets/tileset/tileset_16x16.png";
-static const string font_path = "../../lab4/assets/fonts/solo5.ttf";
+static const string base_dir = "../../lab4";
+static const string levels_path = "/levels";
+static const string tileset_path = "/assets/tileset/tileset_16x16.png";
+static const string font_path = "/assets/fonts/solo5.ttf";
 static const uint font_size = 14;
 static const float scale = 4.f;
 static const string window_title = "Necromancer: ";
@@ -126,7 +126,7 @@ void talent_dialog(World& w) {
 
 
 
-int setup(string& filename, uint& save_num) {
+int setup(string& filename, uint& save_num, string& root_path) {
     int choice = 0;
     system("clear 2>/dev/null");
     cout << wrap <<
@@ -140,7 +140,7 @@ int setup(string& filename, uint& save_num) {
     else if(choice == 2) {
         system("clear 2>/dev/null");
         cout << "\n\tAvailable levels: " << endl;
-        chdir(levels_path.c_str());
+        chdir((root_path + levels_path).c_str());
         system("ls -1d */");
         cout << "\n\tEnter level name: " << ends;
         cin >> filename;
@@ -149,7 +149,7 @@ int setup(string& filename, uint& save_num) {
             cout << "Existing save files: " << endl;
             system("ls -1 save*.ini");
         }
-        cout << "\n\tEnter save number: " << ends;
+        cout << "\n\tEnter save number (0, 1, ...): " << ends;
         cin >> save_num;
         return 0;
     }
@@ -159,7 +159,11 @@ int setup(string& filename, uint& save_num) {
 
 int main()
 {
-    chdir(levels_path.c_str());
+    char root_path_c[256];
+    chdir(base_dir.c_str());
+    getcwd(root_path_c, 256);
+    string root_path(root_path_c);
+    chdir((root_path + levels_path).c_str());
     string filename = "t_corpus";
     char choice;
     bool has_moved;
@@ -172,19 +176,19 @@ int main()
     window.close();
 
     sf::Texture texture;
-    texture.loadFromFile(tileset_path);
+    texture.loadFromFile(root_path + tileset_path);
     sf::Text text;
     sf::Font font;
-    font.loadFromFile(font_path);
+    font.loadFromFile(root_path + font_path);
     text.setFont(font);
     text.setCharacterSize(font_size);
 
     do {
-        setup(filename, save_number);
+        setup(filename, save_number, root_path);
         try {
             cout << "\n\t\tLoading from '" << filename << "', save file save" << save_number << ".ini" << endl;
             sleep(1);
-            World& w = World::fromDir(levels_path + "/" + filename, save_number);
+            World& w = World::fromDir(root_path + levels_path + "/" + filename, save_number);
             cur_level = w.getCurrentLevel().getLevelNumber();
 
             // restart window

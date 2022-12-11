@@ -283,6 +283,7 @@ namespace DungeonGame {
                     auto it = path.begin();
                     while (it != path.end() && remaining_moves-- != 0)
                         if (gen.getRandomFloat() < current_level.getMoveProb()) {
+                            moving_mob.setFacing(*it);
                             auto delta = _getDeltaByKey(
                                     Controls::AllMoveKeys[
                                             *(it++)]
